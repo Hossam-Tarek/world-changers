@@ -15,4 +15,9 @@ class Subject extends Model
         'name',
         'semester',
     ];
+
+    public function exams()
+    {
+        return $this->morphMany(Exam::class, 'examable');
+    }
 }

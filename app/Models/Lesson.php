@@ -14,4 +14,9 @@ class Lesson extends Model
         'name',
         'order',
     ];
+
+    public function exams()
+    {
+        return $this->morphMany(Exam::class, 'examable');
+    }
 }
