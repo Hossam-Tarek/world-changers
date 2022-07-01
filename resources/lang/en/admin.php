@@ -37,6 +37,13 @@ return [
     'users' => 'Users',
     'admin' => 'Admin',
     'admins' => 'Admins',
+    'year' => 'Year',
+    'years' => 'Years',
+    'department' => 'Department',
+    'departments' => 'Departments',
+    'subject' => 'Subject',
+    'subjects' => 'Subjects',
+    'semester' => 'Semester',
 
     'id' => 'ID',
     'title' => 'Title',
@@ -52,5 +59,8 @@ return [
     'status' => 'Status',
     'slug' => 'Slug',
     'action' => 'Action',
+
+    'new_subject_added' => 'New subject added successfully',
+    'new_subject_updated' => 'Subject updated successfully',
 ];
 

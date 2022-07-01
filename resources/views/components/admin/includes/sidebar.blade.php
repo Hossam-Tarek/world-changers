@@ -94,6 +94,32 @@
                     </li>
                 @endif
 
+                @if(auth('admin')->user()->hasRole('super-admin') || auth('admin')->user()->can('subjects'))
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-user-shield mr-2"></i>
+                            <p>
+                                {{ __('admin.subjects') }}
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.subjects.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>{{ __('admin.subjects') }}</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.subjects.create') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>{{ __('admin.add') .' '. __('admin.subject') }}</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+
                 @if(auth('admin')->user()->hasRole('super-admin') || auth('admin')->user()->can('settings'))
                     <li class="nav-item">
                         <a href="{{ route('admin.settings.edit') }}" class="nav-link">
