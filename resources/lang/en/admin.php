@@ -37,9 +37,12 @@ return [
     'users' => 'Users',
     'admin' => 'Admin',
     'admins' => 'Admins',
+    'page' => 'Page',
+    'pages' => 'Pages',
 
     'id' => 'ID',
     'title' => 'Title',
+    'description' => 'Description',
     'body' => 'Body',
     'name' => 'Name',
     'created_at' => 'Created at',
