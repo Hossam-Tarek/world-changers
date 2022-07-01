@@ -1,0 +1,41 @@
+.saves {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  &-empty {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      text-align: center;
+      font-size: 1.54rem;
+      font-weight: bold;
+    }
+  }
+  &__card {
+    padding: 2rem 1rem;
+    text-align: center;
+    border: 1px solid #c1c1c1;
+    border-radius: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+  &__subject {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  &__pgh {
+    text-align: start;
+    font-weight: bold;
+    color: #333;
+  }
+  &__test {
+    color: #2196f3;
+    font-weight: bold;
+
+    margin-bottom: 1.5rem;
+  }
+  &__question {
+    text-align: start;
+  }
+}

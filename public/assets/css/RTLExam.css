@@ -1,0 +1,17 @@
+body {
+    direction: ltr;
+    text-align: left;
+}
+.ms-auto {
+    margin-left: auto !important;
+}
+
+.radio-input-field .radio-input-label .number {
+    color: white;
+    background: #dfe8f1;
+    line-height: 1;
+    text-align: center;
+    padding: 3px 10px;
+    border-radius: 5px;
+    margin-left: 0;
+}

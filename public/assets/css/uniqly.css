@@ -1,0 +1,27 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 81 | / @include to-tablet-sm {
+ * 82 | |   // uniqley, why-we
+ * 83 | |   .why-we__items .item img,
+ * 84 | |   .uniquely__items .item img {
+ * 85 | |     width: 100px;
+ * 86 | |   }
+ * 87 | |   // repeated questions
+ * 88 | |   .repeat-questions__accordion .accordion-button:not(.collapsed),
+ * 89 | |   .repeat-questions__accordion .accordion-button {
+ * 90 | |     font-size: 1rem;
+ * 91 | |   }
+ * 92 | \ }
+ *    '
+ *   assets/sass/uniqly.scss 81:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 81 \2502  \250c  @include to-tablet-sm {\a 82 \2502  \2502    // uniqley, why-we\a 83 \2502  \2502    .why-we__items .item img,\a 84 \2502  \2502    .uniquely__items .item img {\a 85 \2502  \2502      width: 100px;\a 86 \2502  \2502    }\a 87 \2502  \2502    // repeated questions\a 88 \2502  \2502    .repeat-questions__accordion .accordion-button:not(.collapsed),\a 89 \2502  \2502    .repeat-questions__accordion .accordion-button {\a 90 \2502  \2502      font-size: 1rem;\a 91 \2502  \2502    }\a 92 \2502  \2514  }\a    \2575 \a   assets/sass/uniqly.scss 81:1  root stylesheet";
+}

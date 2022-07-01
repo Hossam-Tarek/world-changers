@@ -1,0 +1,8 @@
+.questions-page .questions__items .questions-item {
+  text-align: left;
+  direction: ltr;
+}
+.number-wrong {
+  margin-left: 0;
+  margin-right: 5px;
+}

@@ -1,89 +1,100 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-{{--    <link rel="icon" type="image/x-icon" href="{{ asset(getSetting('logo')) }}"/>--}}
+     <x-website.layouts.master>
+   <!--start home bg-->
+   <!--start home bg-->
+   <section class="home-bg-items">
+       <div class="container">
+           <div class="home-bg pt-3">
+               <figure class="">
+                   <img src="{{ asset('assets/images/home/bg.png') }}" alt="" />
+               </figure>
+           </div>
+       </div>
+   </section>
+   <!--end home bg-->
+   <!--end home bg-->
+   <!--start  school__classes-->
+   <section class="school__classes padding-y">
+       <div class="container">
+           <div class="school__classes__items row justify-content-center">
+               <div class="col-lg-3 col-md-6">
+                   <div class="school__classes__item color-1">
+                       <h3 class="mt-2">الصف الثالث الثانوي العام</h3>
+                       <p>الشعبة العلمية - علوم</p>
+                       <div class="go-corner color-1" href="#">
+                           <div class="go-arrow">→</div>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                   <div class="school__classes__item color-1">
+                       <h3 class="mt-2">الصف الثالث الثانوي العام</h3>
+                       <p>الشعبة العلمية - رياضيات</p>
+                       <div class="go-corner color-1" href="#">
+                           <div class="go-arrow">→</div>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                   <div class="school__classes__item col mg color-1">
+                       <h3 class="mt-2">الصف الثالث الثانوي العام</h3>
+                       <p>الشعبة الأدبية</p>
+                       <div class="go-corner color-1" href="#">
+                           <div class="go-arrow">→</div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="school__classes__items row justify-content-center">
+               <div class="col-lg-3 col-md-6">
+                   <div class="school__classes__item color-2">
+                       <h3 class="mt-2">الصف الثاني الثانوي العام</h3>
+                       <p>الشعبة العلمية </p>
+                       <div class="go-corner color-2" href="#">
+                           <div class="go-arrow">→</div>
+                       </div>
+                   </div>
+               </div>
 
+               <div class="col-lg-3 col-md-6">
+                   <div class="school__classes__item mg color-2">
+                       <h3 class="mt-2">الصف الثاني الثانوي العام</h3>
+                       <p>الشعبة الأدبية</p>
+                       <div class="go-corner color-2" href="#">
+                           <div class="go-arrow">→</div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="school__classes__items row justify-content-center">
+               <div class="col-lg-3 col-md-6">
+                   <div class="school__classes__item color-3">
+                       <h3 class="mt-2">الصف الأول الثانوي العام</h3>
+                       <div class="go-corner color-3" href="#">
+                           <div class="go-arrow">→</div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <title>{{ env('APP_NAME') }}</title>
+   <!--end school__classes-->
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    <style>
-        html, body {
-            /*background-color: #fff;*/
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-    </style>
-</head>
-<body>
-@include('sweetalert::alert')
-
-<div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                <a href="{{ route('dashboard') }}">Dashboard</a>
-            @else
-                <a href="{{ route('login') }}">Login</a>
-            @endauth
+   <section class="site-free text-center">
+       <a class="btn-use-free" style="color: #03a9f4" href="{{ route('use.free') }}">
+           " يحق استخدام الموقع مجانا طوال العام لمن أحد والديه متوفي عند الله، و للطلاب ذوي الهمم، والطلاب الذين أحد والديهم من ذوي الهمم، والطلاب الخمسة الأوائل في كل مدرسة في مصر"
+       </a>
+   </section>
+   <section class="text-center padd-y">
+       <a href="contact.html" class="{{ route('contact') }}">تواصل معنا</a>
+   </section>
+   <!-- <div class="lead text-center mt-4 pt-2 footer-p">
+       <div class="container border-top">
+        <span> تشكر إدارة الموقع </span>
+        <a href="" > <strong style="color: #106cbc;">محمود مجاهد</strong>  </a>
+        <div>
+         على مجهوداته في إثراء الطلاب بالمزيد من العلم وتدعوكم للتواصل معه
         </div>
-    @endif
-
-    <div class="content">
-        <div class="title m-b-md">
-            {{ env('APP_NAME') }}
-        </div>
-    </div>
-</div>
-</body>
-</html>
+       </div>
+     </div> -->
+    </x-website.layouts.master>
