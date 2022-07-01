@@ -31,4 +31,6 @@ Route::middleware('isAdmin')->group(function () {
 
     Route::resource('/admins', AdminController::class)->except('show')->middleware('role_or_permission:super-admin|admins,admin');
     Route::post('/admins/{admin}/password', [AdminController::class, 'changePassword'])->name('admins.password')->middleware('role_or_permission:super-admin|admins,admin');
+
+    Route::resource('/pages', PageController::class)->only(['index', 'edit', 'update'])->middleware('role_or_permission:super-admin|pages,admin');
 });
