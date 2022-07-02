@@ -1,15 +1,15 @@
   <!-- Start Modal Free -->
   <div
   class="modal fade create-modal"
-  id="signUpChoiseModal"
+  id="loginChoiseModal"
   tabindex="-1"
-  aria-labelledby="signUpChoiseModal"
+  aria-labelledby="loginChoiseModal"
   aria-hidden="true"
 >
   <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
           <div class="modal-header">
-              <h2>إنشاء حساب جديد</h2>
+              <h2>تسجيل دخول</h2>
               <button
                   type="button"
                   class="btn-close"

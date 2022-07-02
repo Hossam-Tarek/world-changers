@@ -21,30 +21,36 @@
         >
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('home') }}">الرئيسية</a>
+                    <a class="nav-link {{ \Request::route()->getName() == 'home' ? 'active' : '' }}" href="{{ route('home') }}">الرئيسية</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('about') }}">من نحن</a>
+                    <a class="nav-link {{ \Request::route()->getName() == 'about' ? 'active' : '' }}" href="{{ route('about') }}">من نحن</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('teachers') }}">
+                    <a class="nav-link {{ \Request::route()->getName() == 'teachers' ? 'active' : '' }}" href="{{ route('teachers') }}">
                         المعلمون
                     </a>
                 </li>
                 <li class="nav-item mx-1">
                     <a
                         class="nav-link"
-                        href="{{ route('register') }}"
+                        href=""
                         id="btn__popUp"
-                        data-bs-target="#choiseModal"
+                        data-bs-target="#signUpChoiseModal"
                         data-bs-toggle="modal"
                     >
                         إنشاء حساب
                     </a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link" href="{{ route('login') }}">
-                        تسجيل دخول
+                    <a
+                        class="nav-link"
+                        href=""
+                        id="btn__popUp"
+                        data-bs-target="#loginChoiseModal"
+                        data-bs-toggle="modal"
+                    >
+                         تسجيل دخول
                     </a>
                 </li>
             </ul>

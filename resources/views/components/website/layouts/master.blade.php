@@ -27,6 +27,7 @@
     <body>
         <x-website.includes.header/>
         <x-website.includes.signup-modal/>
+        <x-website.includes.login-modal/>
         <x-website.includes.use-free-modal/>
         {{ $slot }}
         <!-- scripts -->
@@ -36,9 +37,6 @@
         <script src="{{ asset('assets/js/slider.js') }}"></script>
         <script src="{{ asset('assets/js/index.js') }}"></script>
         <script src="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.js"></script>
-        <script>
-            var upload = new FileUploadWithPreview("myUniqueUploadId");
-        </script>
         @if(isset($scripts) && $scripts->isNotEmpty()) {{ $scripts }} @endif
         <x-website.includes.footer/>
     </body>

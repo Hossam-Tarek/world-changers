@@ -51,7 +51,7 @@
                     <div class="mb-3">
                         <div
                             class="custom-file-container"
-                            data-upload-id="myUniqueUploadId"
+                            data-upload-id="myUniqueUploadId3"
                         >
                             <label
                                 for="file-upload-for-label-click"
@@ -152,4 +152,9 @@
     </div>
 </section>
 <!-- End Modal Free -->
+<x-slot name="scripts">
+    <script>
+        var upload = new FileUploadWithPreview("myUniqueUploadId3");
+    </script>
+</x-slot>
 </x-website.layouts.master>

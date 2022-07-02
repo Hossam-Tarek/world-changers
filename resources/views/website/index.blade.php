@@ -86,15 +86,6 @@
        </a>
    </section>
    <section class="text-center padd-y">
-       <a href="contact.html" class="{{ route('contact') }}">تواصل معنا</a>
+       <a href="{{ route('contact') }}" class="contact-us">تواصل معنا</a>
    </section>
-   <!-- <div class="lead text-center mt-4 pt-2 footer-p">
-       <div class="container border-top">
-        <span> تشكر إدارة الموقع </span>
-        <a href="" > <strong style="color: #106cbc;">محمود مجاهد</strong>  </a>
-        <div>
-         على مجهوداته في إثراء الطلاب بالمزيد من العلم وتدعوكم للتواصل معه
-        </div>
-       </div>
-     </div> -->
     </x-website.layouts.master>
