@@ -1,0 +1,61 @@
+.my-teacher {
+  .teacher-item {
+    border: 1px solid #cfcfcf;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    &__fig {
+      margin-inline-end: 1rem;
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    &__header {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+    &__name {
+      font-size: 1.5rem;
+      color: #3e7ebc;
+    }
+
+    &__subject {
+      font-size: 1rem;
+      color: #88bce4;
+    }
+    i.unfollow {
+      color: gray;
+      opacity: 0.5;
+    }
+  }
+}
+
+@include to-mobile-sm {
+  .my-teacher {
+    .teacher-item {
+      flex-direction: column;
+      text-align: center;
+      &__fig {
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      &__header {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.my-teacher {
+  .teacher-item__name {
+    font-size: 1rem;
+    color: #3e7ebc;
+  }
+}
