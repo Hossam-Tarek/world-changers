@@ -1,4 +1,4 @@
-     <x-website.layouts.master>
+<x-website.layouts.master>
    <!--start home bg-->
    <!--start home bg-->
    <section class="home-bg-items">
@@ -88,4 +88,4 @@
    <section class="text-center padd-y">
        <a href="{{ route('contact') }}" class="contact-us">تواصل معنا</a>
    </section>
-    </x-website.layouts.master>
+</x-website.layouts.master>

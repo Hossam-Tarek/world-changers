@@ -19,10 +19,10 @@
           </div>
           <div class="modal-body">
               <div class="bg__popUp__content">
-                  <a href="register-as-teacher.html">
+                  <a href="{{ route('teacher.register') }}">
                       <button class="bg__popUp__item">المعلم</button>
                   </a>
-                  <a href="register-as-student.html">
+                  <a href="{{ route('register') }}">
                       <button class="bg__popUp__item student">
                           الطالب
                       </button>

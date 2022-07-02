@@ -21,6 +21,15 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'city_id',
+        'parent_phone',
+        'study_language_id',
+        'second_language_id',
+        'year_id',
+        'department_id',
+        'school',
+        'targeted_percentage',
+        'targeted_collage',
     ];
 
     /**
@@ -41,4 +50,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function phones()
+    {
+        return $this->morphMany(Phone::class, 'phoneable');
+    }
 }

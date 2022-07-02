@@ -15,16 +15,52 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('city_id')
                 ->nullable()
                 ->constrained()
                 ->nullOnDelete()
                 ->cascadeOnUpdate();
 
+
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('parent_phone')->nullable();
+
+            $table->foreignId('study_language_id')
+                ->nullable()
+                ->references('id')
+                ->on('languages')
+                ->constrained()
+                ->nullOnDelete()
+                ->cascadeOnUpdate();
+
+            $table->foreignId('second_language_id')
+                ->nullable()
+                ->references('id')
+                ->on('languages')
+                ->constrained()
+                ->nullOnDelete()
+                ->cascadeOnUpdate();
+
+            $table->foreignId('year_id')
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete()
+                ->cascadeOnUpdate();
+
+            $table->foreignId('department_id')
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete()
+                ->cascadeOnUpdate();
+
+            $table->string('school')->nullable();
+            $table->float('targeted_percentage')->nullable();
+            $table->string('targeted_collage')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });
