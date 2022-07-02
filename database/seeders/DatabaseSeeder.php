@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SuperAdminSeeder::class);
         $this->call(SettingSeeder::class);
         $this->call(HighSchoolSeeder::class);
+        $this->call(PageSeeder::class);
     }
 }

@@ -119,6 +119,15 @@
                         </ul>
                     </li>
                 @endif
+                        
+                @if(auth('admin')->user()->hasRole('super-admin') || auth('admin')->user()->can('pages'))
+                    <li class="nav-item">
+                        <a href="{{ route('admin.pages.index') }}" class="nav-link">
+                            <i class="fas fa-file mr-2"></i>
+                            <p>{{ __('admin.pages') }}</p>
+                        </a>
+                    </li>
+                @endif
 
                 @if(auth('admin')->user()->hasRole('super-admin') || auth('admin')->user()->can('settings'))
                     <li class="nav-item">

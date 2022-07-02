@@ -1,0 +1,12 @@
+<x-admin.layouts.card>
+    <x-slot name="title">{{ __('admin.pages') }}</x-slot>
+
+    <x-slot name="pageTitle">{{ __('admin.pages') }}</x-slot>
+    <x-slot name="cardHeader">{{ __('admin.edit') .' '.$page->slug.' '. __('admin.page') }}</x-slot>
+
+    <form action="{{ route('admin.pages.update', $page) }}" method="post" enctype="multipart/form-data">
+        @csrf
+        @method('put')
+        @include('admin.pages.form')
+    </form>
+</x-admin.layouts.card>

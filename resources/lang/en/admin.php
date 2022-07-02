@@ -44,9 +44,12 @@ return [
     'subject' => 'Subject',
     'subjects' => 'Subjects',
     'semester' => 'Semester',
+    'page' => 'Page',
+    'pages' => 'Pages',
 
     'id' => 'ID',
     'title' => 'Title',
+    'description' => 'Description',
     'body' => 'Body',
     'name' => 'Name',
     'created_at' => 'Created at',

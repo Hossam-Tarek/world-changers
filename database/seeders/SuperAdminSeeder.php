@@ -47,6 +47,10 @@ class SuperAdminSeeder extends Seeder
                 'guard_name' => 'admin',
             ],
             [
+                'name' => 'pages',
+                'guard_name' => 'admin',
+            ],
+            [
                 'name' => 'subjects',
                 'guard_name' => 'admin',
             ],
