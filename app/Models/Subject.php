@@ -20,4 +20,14 @@ class Subject extends Model
     {
         return $this->morphMany(Exam::class, 'examable');
     }
+
+    public function year()
+    {
+        return $this->belongsTo(Year::class);
+    }
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
 }

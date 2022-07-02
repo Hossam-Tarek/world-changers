@@ -97,7 +97,7 @@
                 @if(auth('admin')->user()->hasRole('super-admin') || auth('admin')->user()->can('subjects'))
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-user-shield mr-2"></i>
+                            <i class="fas fa-book mr-2"></i>
                             <p>
                                 {{ __('admin.subjects') }}
                                 <i class="fas fa-angle-left right"></i>
