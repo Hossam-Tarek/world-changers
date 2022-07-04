@@ -9,7 +9,8 @@
             <span></span>
             <h2>إنشاء حساب الطالب</h2>
         </header>
-        <form action="" novalidate class="needs-validation">
+        <form action="{{ route('register') }}" method="POST" novalidate class="needs-validation" >
+            @csrf
             <div class="">
                 <div class="row w-100 mx-0 px-0">
                     <x-form.input name="name" class="col-md-6 mb-2" value="{{ old('name') }}" style="direction: rtl" place-holder="اسم الطالب الرباعي" required>
@@ -70,29 +71,17 @@
                         @enderror
                     </div>
 
-                    <div class="col-md-6 register__select mb-2">
-                        <label for="study_language_id">الدراسة باللغة<span class="red">*</span></label>
-                        <select class="form-control @error('study_language_id') is-invalid @enderror" name="study_language_id" id="study_language_id">
-                            @foreach($languages as $language)
-                                <option value="{{ $language->id }}">{{ $language->local_name }}</option>
-                            @endforeach
-                        </select>
-                        @error('study_language_id')
-                            <p class="help text-danger">{{ $errors->first('study_language_id') }}</p>
-                        @enderror
-                    </div>
-
                     <livewire:main.state-city-select group-class="col-md-6"/>
 
-                    <x-form.input type="email" name="email" class="col-md-6 mb-2" value="{{ old('email') }}" style="direction: rtl" place-holder="البريد الإلكتروني" required>
+                    <x-form.input name="school" class="col-md-6 mb-2" value="{{ old('school') }}" style="direction: rtl" place-holder="المدرسة" required>
                         المدرسة<span class="red">*</span>
                     </x-form.input>
 
-                    <x-form.input type="email" name="email" class="col-md-6 mb-2" value="{{ old('email') }}" style="direction: rtl" place-holder="البريد الإلكتروني" required>
+                    <x-form.input type="number" name="targeted_percentage" class="col-md-6 mb-2" value="{{ old('targeted_percentage') }}" style="direction: rtl" place-holder="النسبة المئوية المستهدفة" required>
                         النسبة المئوية المستهدفة<span class="red">*</span>
                     </x-form.input>
 
-                    <x-form.input type="email" name="email" class="col-md-6 mb-2" value="{{ old('email') }}" style="direction: rtl" place-holder="البريد الإلكتروني" required>
+                    <x-form.input name="targeted_collage" class="col-md-6 mb-2" value="{{ old('targeted_collage') }}" style="direction: rtl" place-holder="الكلية المستهدفة" required>
                         الكلية المستهدفة<span class="red">*</span>
                     </x-form.input>
 

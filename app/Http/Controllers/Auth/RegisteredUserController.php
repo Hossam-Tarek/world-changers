@@ -36,17 +36,28 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'city_id' => 'required|exists:cities,id',
+            'phones' => 'required',
+            'phones.*' => 'required',
+            'parent_phone' => 'nullable',
+            'study_language_id' => 'required|exists:languages,id',
+            'second_language_id' => 'required|exists:languages,id',
+            'year_id' => 'required|exists:years,id',
+            'department_id' => 'required|exists:departments,id',
+            'school' => 'required|string|max:255',
+            'targeted_percentage' => 'required|numeric',
+            'targeted_collage' => 'required|string|max:255',
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        $data['password'] = Hash::make($request->password);
+        // TODO: Create many phones for the user
+        dd($data['phones']);
+        $user = User::create($data);
+        $user->phones()->save($data['phones']);
 
         event(new Registered($user));
 
