@@ -21,9 +21,10 @@ class CreateSubjectsTable extends Migration
                 ->cascadeOnDelete();
 
             $table->foreignId('department_id')
+                ->nullable()
                 ->constrained()
                 ->cascadeOnUpdate()
-                ->cascadeOnDelete();
+                ->nullOnDelete();
 
             $table->string('name');
             $table->tinyInteger('semester')->nullable();

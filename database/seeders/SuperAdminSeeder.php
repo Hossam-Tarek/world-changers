@@ -50,6 +50,10 @@ class SuperAdminSeeder extends Seeder
                 'name' => 'pages',
                 'guard_name' => 'admin',
             ],
+            [
+                'name' => 'subjects',
+                'guard_name' => 'admin',
+            ],
         ]);
 
         $superAdmin->assignRole('super-admin');
