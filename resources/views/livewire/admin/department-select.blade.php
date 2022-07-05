@@ -1,5 +1,5 @@
-<div>
-    <div class="form-group">
+<div class="col-md-12">
+    <div class="form-group {{ $groupClass ?? ''  }}">
         <label for="year_id">{{ __('admin.year') }}</label>
         <select wire:model="yearId" name="year_id" name="year_id" id="year_id" class="form-control">
             <option value="">{{ __("admin.choose") . ' ' . __('admin.year') }}</option>
@@ -12,7 +12,7 @@
         @enderror
     </div>
 
-    <div class="form-group">
+    <div class="form-group {{ $groupClass ?? ''  }}">
         <label for="department">{{ __('admin.department') }}</label>
         <select wire:model="departmentId" name="department_id" id="department_id" class="form-control">
             <option value="">{{ __("admin.choose") .' '. __('admin.department') }}</option>

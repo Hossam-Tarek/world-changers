@@ -13,9 +13,11 @@ class DepartmentSelect extends Component
     public $departmentId;
     public $departments;
     public $subject;
+    public $groupClass;
 
-    public function mount($subject = null)
+    public function mount($subject = null, $groupClass = '')
     {
+        $this->groupClass = $groupClass;
         $this->years = Year::all();
         $this->subject = $subject;
         if ($subject) {

@@ -46,6 +46,10 @@ return [
     'semester' => 'Semester',
     'page' => 'Page',
     'pages' => 'Pages',
+    'state' => 'State',
+    'states' => 'States',
+    'city' => 'City',
+    'cities' => 'Cities',
 
     'id' => 'ID',
     'title' => 'Title',
