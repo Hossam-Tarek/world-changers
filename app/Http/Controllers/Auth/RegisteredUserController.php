@@ -41,7 +41,7 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            // 'city_id' => 'required|exists:cities,id',
+            'city_id' => 'required|exists:cities,id',
             'phones' => 'required',
             'phones.*' => 'required',
             'parent_phone' => 'nullable',
@@ -53,10 +53,8 @@ class RegisteredUserController extends Controller
             'targeted_percentage' => 'required|numeric',
             'targeted_collage' => 'required|string|max:255',
         ]);
-        // dd($request->all());
 
         $data['password'] = Hash::make($request->password);
-        // TODO: Create many phones for the user
         $user = User::create($data);
         foreach ($request->phones as $value) {
             $phone = new Phone();
