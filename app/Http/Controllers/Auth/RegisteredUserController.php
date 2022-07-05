@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Language;
+use App\Models\Phone;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -40,7 +41,7 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'city_id' => 'required|exists:cities,id',
+            // 'city_id' => 'required|exists:cities,id',
             'phones' => 'required',
             'phones.*' => 'required',
             'parent_phone' => 'nullable',
@@ -52,13 +53,16 @@ class RegisteredUserController extends Controller
             'targeted_percentage' => 'required|numeric',
             'targeted_collage' => 'required|string|max:255',
         ]);
+        // dd($request->all());
 
         $data['password'] = Hash::make($request->password);
         // TODO: Create many phones for the user
-        dd($data['phones']);
         $user = User::create($data);
-        $user->phones()->save($data['phones']);
-
+        foreach ($request->phones as $value) {
+            $phone = new Phone();
+            $phone->number = $value;
+            $user->phones()->save($phone);
+       }
         event(new Registered($user));
 
         Auth::login($user);
