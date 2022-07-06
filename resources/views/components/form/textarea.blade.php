@@ -3,7 +3,7 @@
         <label for="{{ $name }}">{{ $slot }}</label>
     @endif
     <textarea class="form-control {{ $inputClass }} @error($name) is-invalid @enderror" id="{{ $name }}" name="{{ $name }}"
-              placeholder="{{ $slot }}" {{ $attributes }}>{!! $value ?? old($name) !!}</textarea>
+              placeholder="{{ $placeHolder ?? $slot }}" {{ $attributes }}>{!! $value ?? old($name) !!}</textarea>
 
     @error($name)
     <p class="help text-danger">{{ $errors->first($name) }}</p>

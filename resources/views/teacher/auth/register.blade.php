@@ -1,59 +1,520 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<x-website.layouts.master>
+    <x-slot name="styles">
+        <livewire:styles/>
+    </x-slot>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    <section class="sec register">
+        <div class="container">
+            <header class="main-header">
+                <span></span>
+                <h2>إنشاء حساب للمعلم</h2>
+            </header>
 
-        <form method="POST" action="{{ route('teacher.register') }}">
-            @csrf
+            <form action="{{ route('teacher.register') }}" method="POST" class="needs-validation" action="" novalidate>
+                @csrf
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+                <div class="row w-100 mx-0 px-0">
+                    <x-form.input name="name" class="col-md-6" value="{{ old('name') }}" style="direction: rtl" place-holder="اسم المعلم" required>
+                        اسم المعلم<span class="red">*</span>
+                    </x-form.input>
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="mb-2">
+                            <div class="add-phone-field">
+                                <label for="phones">رقم هاتف المعلم <span class="red">*</span></label>
+                                <i class="fas fa-plus-circle" style="color: #03a9f4"></i>
+                            </div>
+                            <input class="form-control" type="text" name="phones[]" id="phones" placeholder="رقم الهاتف" required/>
+                            <div class="invalid-feedback"> هذا الحقل مطلوب</div>
+                            <div class="phone-wrapper"></div>
+                        </div>
+                    </div>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+                    <x-form.input type="email" name="email" class="col-md-6 mb-2" value="{{ old('email') }}" style="direction: rtl" place-holder="البريد الإلكتروني" required>
+                        البريد الإلكتروني<span class="red">*</span>
+                    </x-form.input>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
+                    <x-form.input type="password" name="password" class="col-md-6 mb-2" place-holder="كلمة المرور" required>
+                        كلمة المرور<span class="red">*</span>
+                    </x-form.input>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+                    <x-form.input type="password" name="password_confirmation" class="col-md-6 mb-2" place-holder="تأكيد كلمة المرور" required>
+                        تأكيد كلمة المرور<span class="red">*</span>
+                    </x-form.input>
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
+                    <livewire:main.state-city-select group-class="col-md-6"/>
 
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+                    <x-form.input name="school" class="col-md-6 mb-2" value="{{ old('school') }}" style="direction: rtl" place-holder="المدرسة" required>
+                        المدرسة /المركز التعليمي<span class="red">*</span>
+                    </x-form.input>
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
+                    <x-form.textarea name="brief" rows="7" class="col-md-12 mb-2" value="{{ old('brief') }}" style="direction: rtl" place-holder="إضافة النبذة التعريفية هنا... ">
+                        نبذة تعريفية
+                    </x-form.textarea>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('teacher.login') }}">
-                    {{ __('Already registered?') }}
-                </a>
 
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+                    <div class="col-md-6 d-none">
+                        <div class="mb-3">
+                            <div
+                                class="custom-file-container"
+                                data-upload-id="myUniqueUploadId"
+                            >
+                                <label
+                                    for="file-upload-for-label-click"
+                                    class="w-100 mb-2"
+                                >
+                                    <div
+                                        class="d-flex justify-content-between"
+                                    >
+                                        <div style="cursor: pointer" class="add-teacher-file">
+                                            <i
+                                                class="fas fa-plus-circle"
+                                                style="color: #03a9f4"
+                                            ></i>
+                                            إضافة صورة شخصية للمعلم
+                                        </div>
+                                        <a
+                                            href="javascript:void(0)"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal"
+
+                                            title="Clear Image"
+                                        >
+                                            <i
+                                                class="fas fa-trash-alt"
+                                                style="color: #f44336"
+                                            ></i>
+                                        </a>
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content" style="max-width: 329px; margin: auto; padding: 9px;">
+                                                    <div class="modal-header pb-0">
+                                                        <h6 class="text-center w-100" id="exampleModalLabel">هل تريد حذف جميع المرفقات؟    </h6>
+                                                    </div>
+                                                    <div class="modal-footer text-center justify-content-center">
+                                                        <button
+                                                            type="button"
+                                                            style="background-color: #dc3545;"
+                                                            data-bs-dismiss="modal"
+                                                            class="btn btn-sm btn-danger custom-file-container__image-clear" >
+                                                            نعم
+                                                        </button>
+                                                        <button type="button"
+                                                                class="btn btn-sm btn-secondary custom-file-container__image-clear"
+                                                                data-bs-dismiss="modal">لا</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label
+                                    style="display: none"
+                                    class="custom-file-container__custom-file"
+                                >
+                                    <input
+                                        type="file"
+                                        id="file-upload-for-label-click"
+                                        class="custom-file-container__custom-file__custom-file-input"
+                                        accept="application/pdf,image/*"
+                                    />
+                                    <input
+                                        type="hidden"
+                                        name="MAX_FILE_SIZE"
+                                    />
+                                    <span
+                                        class="custom-file-container__custom-file__custom-file-control"
+                                    ></span>
+                                </label>
+                                <div
+                                    class="custom-file-container__image-preview"
+                                    id="video-preview"
+                                    style="height: 150px; margin: 0"
+                                ></div>
+                                <div class="invalid-feedback">
+                                    هذا الحقل يجب أن يحتوي على صور
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+
+                            <div
+                                class="custom-file-container multiple"
+                                data-upload-id="myUniqueUploadId2"
+                            >
+
+                                <label
+                                    for="file-upload-for-label-click1"
+                                    class="w-100 mb-2"
+                                >
+                                    <div
+                                        class="d-flex justify-content-between"
+                                    >
+                                        <div style="cursor: pointer" class="add-teacher-file">
+                                            <i
+                                                class="fas fa-plus-circle"
+                                                style="color: #03a9f4"
+                                            ></i>
+                                            إضافة مجموعة من الصور الخاصة بالمعلم
+                                        </div>
+                                        <a
+                                            href="javascript:void(0)"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal22"
+
+                                            title="Clear Image"
+                                        >
+                                            <i
+                                                class="fas fa-trash-alt"
+                                                style="color: #f44336"
+                                            ></i>
+                                        </a>
+                                        <div class="modal fade" id="exampleModal22" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content" style="max-width: 329px; margin: auto; padding: 9px;">
+                                                    <div class="modal-header pb-0">
+                                                        <h6 class="text-center w-100" id="exampleModalLabel">هل تريد حذف جميع المرفقات؟    </h6>
+                                                    </div>
+                                                    <div class="modal-footer text-center justify-content-center">
+                                                        <button
+                                                            type="button"
+                                                            style="background-color: #dc3545;"
+                                                            data-bs-dismiss="modal"
+                                                            class="btn btn-sm btn-danger custom-file-container__image-clear" >
+                                                            نعم
+                                                        </button>
+                                                        <button type="button"
+                                                                class="btn btn-sm btn-secondary "
+                                                                data-bs-dismiss="modal">لا</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label
+                                    style="display: none"
+                                    class="custom-file-container__custom-file"
+                                >
+                                    <input
+                                        type="file"
+                                        id="file-upload-for-label-click1"
+                                        class="custom-file-container__custom-file__custom-file-input"
+                                        accept="application/pdf,image/*"
+                                        multiple
+                                        aria-label="Choose File"
+                                    />
+                                    <input
+                                        type="hidden"
+                                        name="MAX_FILE_SIZE"
+                                        value="10485760"
+                                    />
+                                    <span
+                                        class="custom-file-container__custom-file__custom-file-control"
+                                    ></span>
+                                </label>
+                                <div class="invalid-feedback  mt-0">
+                                    هذا الحقل يجب أن يحتوي على صور
+                                </div>
+                                <div
+                                    class="custom-file-container__image-preview"
+                                    style="height: 150px; margin: 0"
+                                ></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div>
+                            <div class="mb-3">
+                                <div
+                                    class="custom-file-container"
+                                    data-upload-id="myUniqueUploadId3"
+                                >
+                                    <label
+                                        for="file-upload-for-label-click3"
+                                        class="w-100 mb-2"
+                                    >
+                                        <div
+                                            class="d-flex justify-content-between"
+                                        >
+                                            <div style="cursor: pointer" class="add-teacher-file">
+                                                <i
+                                                    class="fas fa-plus-circle"
+                                                    style="color: #03a9f4"
+                                                ></i>
+                                                إضافة فيديو تعريفي
+                                            </div>
+
+                                            <a
+                                                href="javascript:void(0)"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal2"
+
+                                                title="Clear Image"
+                                            >
+                                                <i
+                                                    class="fas fa-trash-alt"
+                                                    style="color: #f44336"
+                                                ></i>
+                                            </a>
+                                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content" style="max-width: 329px; margin: auto; padding: 9px;">
+                                                        <div class="modal-header pb-0">
+                                                            <h6 class="text-center w-100" id="exampleModal2Label">هل تريد حذف جميع المرفقات؟    </h6>
+                                                        </div>
+                                                        <div class="modal-footer text-center justify-content-center">
+                                                            <button
+                                                                type="button"
+                                                                style="background-color: #dc3545;"
+                                                                data-bs-dismiss="modal"
+                                                                class="btn btn-sm btn-danger custom-file-container__image-clear" >
+                                                                نعم
+                                                            </button>
+                                                            <button type="button"
+                                                                    class="btn btn-sm btn-secondary "
+                                                                    data-bs-dismiss="modal">لا</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <span class="gray">
+                                            يجب ألا تزيد مساحة الفيديو عن 25
+                                            ميجابايت
+                                        </span>
+                                    <label
+                                        style="display: none"
+                                        class="custom-file-container__custom-file"
+                                    >
+                                        <input
+                                            type="file"
+                                            id="file-upload-for-label-click3"
+                                            class="custom-file-container__custom-file__custom-file-input"
+                                            accept="video/mp4,video/x-m4v,video/*"
+                                            multiple
+                                            aria-label="Choose File"
+                                        />
+                                        <input
+                                            type="hidden"
+                                            name="MAX_FILE_SIZE"
+                                            value="10485760"
+                                        />
+                                        <span
+                                            class="custom-file-container__custom-file__custom-file-control"
+                                        ></span>
+                                    </label>
+                                    <div
+                                        class="custom-file-container__image-preview"
+                                        style="height: 100px; margin: 0"
+                                    ></div>
+                                    <div>
+                                        <input class="mt-1 form-control" type="text" name="name" id="teacher"
+                                               placeholder="إضافة رابط من اليوتيوب" >
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="register__select mb-2">
+                            <label for="language">الثانوية <span class="red">*</span></label>
+                            <select
+                                required
+                                class="form-control"
+                                name="language"
+                                id="language"
+                            >
+                                <option value=""></option>
+                                <option value="ar">الأزهرية</option>
+                                <option value="en">العامة</option>
+                            </select>
+                            <div class="invalid-feedback  mt-1">هذا الحقل مطلوب </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="teaching_language_id">التدريس باللغة <span class="red">*</span></label>
+                        <select class="form-control @error('teaching_language_id') is-invalid @enderror" name="teaching_language_id" id="teaching_language_id">
+                            @foreach($languages as $language)
+                                <option value="{{ $language->id }}">{{ $language->local_name }}</option>
+                            @endforeach
+                        </select>
+                        @error('teaching_language_id')
+                        <p class="help text-danger">{{ $errors->first('teaching_language_id') }}</p>
+                        @enderror
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="register__select mb-2">
+                            <label for="language">التدريس باللغة <span class="red">*</span></label>
+                            <select
+                                required
+                                class="form-control"
+                                name="language"
+                                id="language"
+                            >
+                                <option value=""></option>
+                                <option value="ar">العربية</option>
+                                <option value="en">الإنجليزية</option>
+                                <option value="fr">الفرنسية</option>
+                            </select>
+                            <div class="invalid-feedback  mt-1">هذا الحقل مطلوب </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="register__select mb-2">
+                            <label for="role">الصف الدراسي <span class="red">*</span></label>
+                            <select
+                                required
+                                class="form-control multiple"
+                                multiple="multiple"
+                                name="role"
+                                id="role"
+                            >
+                                <option value="first">الأول الثانوي</option>
+                                <option value="second">
+                                    الثاني الثانوي
+                                </option>
+                                <option value="third">
+                                    الثالث الثانوي
+                                </option>
+                            </select>
+                            <div class="invalid-feedback  mt-1">هذا الحقل مطلوب </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row d-flex mb-2">
+                            <div class="add-teacher-file" id="add-field">
+                                <label for="site">
+                                    المواقع الإلكترونية الخاصة بالمعلم
+                                </label>
+                                <i
+
+                                    class="fas fa-plus-circle"
+                                    style="color: #03a9f4"
+                                ></i>
+                            </div>
+                            <div id="website-fields">
+                                <div class="d-flex justify-content-between field-wrapper">
+                                    <input type="text" id="site" class="form-control" style="width: 95%" placeholder="أضف موقعك الإلكتروني">
+                                    <button id="btn-remove" class="add-field remove d-flex align-items-center" type="button">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-danger text-sm" style="font-size: 14px;">
+                    تنويه: ترتيب ظهور المعلمين للطالب يكون بناءا على نشاط المعلم فالمعلم صاحب أكبر عدد من الأسئلة يظهر أولا في المقدمة للطلاب الجدد الذين يشتركون في الموقع. ثم عندما يختار الطالب متابعة معلم معين❤️، فإن أسئلة هذا المعلم هي التي تظهر أولا في المقدمة للطالب.
+                </p>
+                <button type="submit" class="btn w-full">
+                    إنشاء حساب
+                    <img src="assets/images/home/arrow-left.svg" alt="" />
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <x-slot name="scripts">
+        <script src="{{ asset('assets/js/selectize.min.js') }}"></script>
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+                "use strict";
+                // $("select")
+                $("select").selectize({
+                    maxItems: null,
+                });
+                var upload = new FileUploadWithPreview("myUniqueUploadId");
+                var anotherUpload = new FileUploadWithPreview(
+                    "myUniqueUploadId2"
+                );
+                var anotherUpload = new FileUploadWithPreview(
+                    "myUniqueUploadId3"
+                );
+                $("#add-field").click(function () {
+                    let template = `<div class="d-flex justify-content-between field-wrapper">
+                <input
+                  type="text"
+                  id="site"
+                  class="form-control"
+                  style="width: 95%"
+                  placeholder="أضف موقعك الإلكتروني"
+                />
+                <button
+                  id="btn-remove"
+                  class="add-field remove d-flex align-items-center"
+                  type="button"
+                >
+                  <i class="far fa-trash-alt"></i>
+                </button>
+              </div>`;
+
+                    $("#website-fields").append(template);
+                });
+                // field-wrapper
+                $(document).on("click", "#btn-remove", function () {
+                    $(this).closest(".field-wrapper").remove();
+                });
+                $("#add-phone-field").click(function () {
+                    let template = `<div class="row phone-field-wrapper">
+                    <div class="col-11">
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="phone"
+                        placeholder="رقم الهاتف"
+                      />
+                    </div>
+                    <div class="col-1">
+                      <button
+                        id="remove-phone-field"
+                        class="add-field remove d-flex align-items-center"
+                        type="button"
+                      >
+                        <i class="far fa-trash-alt" style="font-size: 1.25rem; margin-bottom:1rem"></i>
+                      </button>
+                    </div>
+                  </div>`;
+
+                    $("#phone-wrapper").append(template);
+                });
+                // field-wrapper
+                $(document).on("click", "#remove-phone-field", function () {
+                    $(this).closest(".phone-field-wrapper").remove();
+                });
+
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.querySelectorAll(".needs-validation");
+                // Loop over them and prevent submission
+                Array.prototype.slice.call(forms).forEach(function (form) {
+                    form.addEventListener(
+                        "submit",
+                        function (event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+
+                            form.classList.add("was-validated");
+                        },
+                        false
+                    );
+                });
+            })();
+        </script>
+
+        <livewire:scripts/>
+    </x-slot>
+</x-website.layouts.master>
