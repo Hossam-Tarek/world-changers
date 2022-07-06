@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SettingSeeder::class);
         $this->call(HighSchoolSeeder::class);
         $this->call(PageSeeder::class);
+        $this->call(StateSeeder::class);
+        $this->call(CitySeeder::class);
     }
 }

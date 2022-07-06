@@ -13,7 +13,7 @@
     </div>
 
     <div class="form-group {{ $groupClass ?? ''  }}">
-        <label for="city_id">{{ __('admin.department') }}</label>
+        <label for="city_id">{{ __('admin.city') }}</label>
         <select wire:model="cityId" name="city_id" id="city_id" class="form-control">
             <option value="">{{ __("admin.choose") .' '. __('admin.city') }}</option>
             @foreach($cities as $city)

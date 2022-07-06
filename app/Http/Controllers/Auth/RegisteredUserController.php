@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Language;
+use App\Models\Phone;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -54,11 +55,12 @@ class RegisteredUserController extends Controller
         ]);
 
         $data['password'] = Hash::make($request->password);
-        // TODO: Create many phones for the user
-        dd($data['phones']);
         $user = User::create($data);
-        $user->phones()->save($data['phones']);
-
+        foreach ($request->phones as $value) {
+            $phone = new Phone();
+            $phone->number = $value;
+            $user->phones()->save($phone);
+       }
         event(new Registered($user));
 
         Auth::login($user);
