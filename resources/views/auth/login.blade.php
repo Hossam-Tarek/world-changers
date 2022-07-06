@@ -18,10 +18,12 @@
                 </figure>
             </div>
             <div class="col-md-5 login-form">
-                <form class="needs-validation" novalidate>
+                <form action="{{ route('login') }}" method="POST" class="needs-validation" novalidate>
+                    @csrf
+
                     <x-form.input class="mb-2" name="email" place-holder="البريد الإلكتروني" required>البريد الإلكتروني <span class="red">*</span></x-form.input>
 
-                    <x-form.input type="password" class="register__file mb-2" name="email" place-holder="ينصح باستخدام أكثر من 6 حروف وأرقام ورموز" required>كلمة المرور <span class="red">*</span></x-form.input>
+                    <x-form.input type="password" class="register__file mb-2" name="password" place-holder="ينصح باستخدام أكثر من 6 حروف وأرقام ورموز" required>كلمة المرور <span class="red">*</span></x-form.input>
 
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="col-lg-4">
