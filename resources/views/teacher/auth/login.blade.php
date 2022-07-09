@@ -1,56 +1,72 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<x-website.layouts.master>
+    <x-slot name="styles">
+    </x-slot>
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+    <section class="login-form after-navbar-section py-5">
+        <div class="container">
+            <header class="main-header">
+                <span></span>
+                <h2>مرحبا بك</h2>
+            </header>
+        </div>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('teacher.login') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+        <div class="row justify-content-center w-100 mx-0 px-0">
+            <div class="container"></div>
+            <div class="col-md-5">
+                <figure class="d-flex align-items-center justify-content-center h-100">
+                    <img src="{{ asset('assets/images/flower.jpg') }}" alt="contact-us" />
+                </figure>
             </div>
+            <div class="col-md-5 login-form">
+                <form action="{{ route('teacher.login') }}" method="POST" class="needs-validation" novalidate>
+                    @csrf
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+                    <x-form.input class="mb-2" name="email" place-holder="البريد الإلكتروني" required>البريد الإلكتروني <span class="red">*</span></x-form.input>
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
+                    <x-form.input type="password" class="register__file mb-2" name="password" place-holder="ينصح باستخدام أكثر من 6 حروف وأرقام ورموز" required>كلمة المرور <span class="red">*</span></x-form.input>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="col-lg-4">
+                            <div class="checkbox row">
+                                <label>
+                                    <input type="checkbox" class="mx-2" name="remember"/>
+                                    تذكرني
+                                </label>
+                            </div>
+                        </div>
+                        @if (Route::has('teacher.password.request'))
+                            <div class="col-lg-5 forget-password">
+                                <!-- Button trigger modal -->
+                                <p type="button" class="btn-forget text-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <a href="{{ route('teacher.password.request') }}">نسيت كلمة المرور</a>
+                                </p>
+                            </div>
+                        @endif
+                    </div>
+
+                    <button type="submit" class="btn w-full">
+                        دخول
+                        <img src="{{ asset('assets/images/home/arrow-left.svg') }}" alt="arrow"/>
+                    </button>
+                </form>
             </div>
+            <!-- Modal -->
 
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+        </div>
+    </section>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('teacher.password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('teacher.password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+    <x-slot name="scripts">
+        <script>
+            $(document).ready(function () {
+                $(document).click(function (event) {
+                    var clickover = $(event.target);
+                    var _opened = $(".navbar-collapse").hasClass("show");
+                    if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+                        $("button.navbar-toggler").click();
+                    }
+                });
+            });
+        </script>
+    </x-slot>
+</x-website.layouts.master>
 
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>

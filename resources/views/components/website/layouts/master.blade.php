@@ -29,7 +29,11 @@
         <x-website.includes.signup-modal/>
         <x-website.includes.login-modal/>
         <x-website.includes.use-free-modal/>
+
         {{ $slot }}
+
+        <x-website.includes.footer/>
+
         <!-- scripts -->
         <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
         <script src="{{ asset('assets/js/slick.min.js') }}"></script>
@@ -38,6 +42,5 @@
         <script src="{{ asset('assets/js/index.js') }}"></script>
         <script src="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.js"></script>
         @if(isset($scripts) && $scripts->isNotEmpty()) {{ $scripts }} @endif
-        <x-website.includes.footer/>
     </body>
 </html>
