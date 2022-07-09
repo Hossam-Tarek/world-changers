@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Teacher\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Language;
 use App\Models\Teacher;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -20,7 +21,9 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('teacher.auth.register');
+        return view('teacher.auth.register', [
+            'languages' => Language::all(),
+        ]);
     }
 
     /**

@@ -11,19 +11,21 @@ class Textarea extends Component
     public $label;
     public $ckEditor;
     public $inputClass;
+    public $placeHolder;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $value = null, $label = true, $ckEditor = false, $inputClass = '')
+    public function __construct($name, $placeHolder, $value = null, $label = true, $ckEditor = false, $inputClass = '')
     {
         $this->name = $name;
         $this->value = $value;
         $this->label = $label;
         $this->ckEditor = $ckEditor;
         $this->inputClass = $inputClass;
+        $this->placeHolder = $placeHolder;
     }
 
     /**

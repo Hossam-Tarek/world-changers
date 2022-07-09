@@ -21,6 +21,7 @@
             crossorigin="anonymous"
         />
         <!--style-->
+        <link rel="stylesheet" href="{{ asset('assets/css/selectize.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
         @if(isset($styles) && $styles->isNotEmpty()) {{ $styles }} @endif
     </head>
