@@ -26,7 +26,7 @@ class SubjectRequest extends FormRequest
     {
         return [
             'year_id' => 'required|exists:years,id',
-            'department_id' => 'nullable|exists:departments,id',
+            'department_id' => 'required|exists:departments,id',
             'name' => 'required|string|max:255',
             'semester' => 'required|in:' . implode(',',array_keys(Semester::getList())),
         ];

@@ -9,6 +9,8 @@
         @powerGridStyles
     </x-slot>
 
+    <x-import-form route="{{ route('admin.subjects.import') }}" templateFile="{{ route('admin.subjects.template') }}"/>
+
     <livewire:admin.tables.subjects/>
 
     <x-slot name="scripts">
