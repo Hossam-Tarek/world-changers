@@ -4,13 +4,17 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SubjectRequest;
-use App\Models\Department;
+use App\Imports\SubjectsImport;
 use App\Models\Subject;
-use App\Models\Year;
-use Illuminate\Http\Request;
+use App\Traits\ImportTrait;
+use Illuminate\Support\Collection;
 
 class SubjectController extends Controller
 {
+    use ImportTrait;
+
+    private $importClass = SubjectsImport::class;
+
     public function index()
     {
         return view('admin.subjects.index');
@@ -46,5 +50,17 @@ class SubjectController extends Controller
         toast(trans('admin.new_subject_updated'),'success');
 
         return redirect()->route('admin.subjects.index');
+    }
+
+    public function downloadTemplate()
+    {
+        $headingRow = [
+            'year_id',
+            'department_id',
+            'name',
+            'semester',
+        ];
+
+        return (new Collection([$headingRow]))->downloadExcel('subjects.xlsx');
     }
 }
