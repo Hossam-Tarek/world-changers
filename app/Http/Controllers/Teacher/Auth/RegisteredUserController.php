@@ -29,7 +29,7 @@ class RegisteredUserController extends Controller
     {
         return view('teacher.auth.register', [
             'languages' => Language::all(),
-            'subjects' => Subject::all(),
+            'subjects' => Subject::query()->with('year')->get(),
             'years' => Year::all(),
         ]);
     }
