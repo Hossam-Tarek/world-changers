@@ -11,9 +11,9 @@ class Subject extends Model
 
     protected $fillable = [
         'year_id',
-        'department_id',
-        'name',
-        'semester',
+        'name_ar',
+        'name_en',
+        'name_fr',
     ];
 
     public function exams()
@@ -26,8 +26,8 @@ class Subject extends Model
         return $this->belongsTo(Year::class);
     }
 
-    public function department()
+    public function departments()
     {
-        return $this->belongsTo(Department::class);
+        return $this->belongsToMany(Department::class);
     }
 }

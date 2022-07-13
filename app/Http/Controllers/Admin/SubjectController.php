@@ -28,9 +28,9 @@ class SubjectController extends Controller
     public function store(SubjectRequest $request)
     {
         $data = $request->validated();
-        $data['semester'] ??= null;
-        $data['department_id'] ??= null;
-        Subject::create($data);
+        $subject = Subject::create($data);
+        $subject->departments()->sync($data['departments']);
+
         toast(trans('admin.new_subject_added'),'success');
 
         return redirect()->route('admin.subjects.index');
@@ -47,6 +47,7 @@ class SubjectController extends Controller
         $data['semester'] ??= null;
         $data['department_id'] ??= null;
         $subject->update($data);
+        $subject->departments()->sync($data['departments']);
         toast(trans('admin.new_subject_updated'),'success');
 
         return redirect()->route('admin.subjects.index');
