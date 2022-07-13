@@ -9,6 +9,7 @@ use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\Year;
 use App\Providers\RouteServiceProvider;
+use App\Traits\FileTrait;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +18,8 @@ use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
 {
+    use FileTrait;
+
     /**
      * Display the registration view.
      *
@@ -65,8 +68,12 @@ class RegisteredUserController extends Controller
             $teacher->phones()->save($phone);
        }
 
-       $teacher->subjects()->sync($request->subjects);
-       $teacher->years()->sync($request->years);
+        if ($request->hasFile('images')) {
+            self::uploadFiles($request->images, $teacher, 'teachers/');
+        }
+
+        $teacher->subjects()->sync($request->subjects);
+        $teacher->years()->sync($request->years);
 
         event(new Registered($teacher));
 
