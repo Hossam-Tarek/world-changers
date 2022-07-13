@@ -53,6 +53,8 @@ class RegisteredUserController extends Controller
             'city_id' => 'required|exists:cities,id',
             'years' => 'required',
             'years.*' => 'required',
+            'sites' => 'nullable',
+            'sites.*' => 'nullable',
             'subjects' => 'required',
             'subjects.*' => 'required',
             'teaching_language_id' => 'required|exists:languages,id',
@@ -67,13 +69,15 @@ class RegisteredUserController extends Controller
             $phone->number = $value;
             $teacher->phones()->save($phone);
        }
+       $teacher->subjects()->sync($request->subjects);
+       $teacher->years()->sync($request->years);
+       foreach($request->sites as $site){
+           $teacher->sites()->create(['site' => $site]);
+       }
 
         if ($request->hasFile('images')) {
             self::uploadFiles($request->images, $teacher, 'teachers/');
         }
-
-        $teacher->subjects()->sync($request->subjects);
-        $teacher->years()->sync($request->years);
 
         event(new Registered($teacher));
 
