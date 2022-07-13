@@ -57,9 +57,10 @@ class SubjectController extends Controller
     {
         $headingRow = [
             'year_id',
-            'department_id',
-            'name',
-            'semester',
+            'name_ar',
+            'name_en',
+            'name_fr',
+            'departments',
         ];
 
         return (new Collection([$headingRow]))->downloadExcel('subjects.xlsx');
