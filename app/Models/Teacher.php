@@ -23,7 +23,11 @@ class Teacher extends Authenticatable
         'name',
         'email',
         'password',
-        'phone_number',
+        'city_id',
+        'teaching_language_id',
+        'school',
+        'brief',
+        'youtube',
         'image',
     ];
 
@@ -45,4 +49,29 @@ class Teacher extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class);
+    }
+
+    public function years()
+    {
+        return $this->belongsToMany(Year::class);
+    }
+
+    public function phones()
+    {
+        return $this->morphMany(Phone::class, 'phoneable');
+    }
+
+    public function lang()
+    {
+        return $this->hasOne(Language::class,'id','teaching_language_id');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
 }
