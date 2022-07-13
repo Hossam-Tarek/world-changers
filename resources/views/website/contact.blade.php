@@ -19,21 +19,25 @@
               </figure>
             </div>
             <div class="col-md-6">
-              <form class="needs-validation" novalidate>
+                <form action="{{ route('contact.store') }}" method="POST" class="needs-validation" action="" novalidate>
+                    @csrf
                 <input
                   class="form-control"
                   type="text"
                   name="name"
                   placeholder="الاسم"
+                  required
                 />
                 <input
                   class="form-control"
                   type="text"
                   name="phone"
                   placeholder="رقم الهاتف"
+                  required
                 />
                 <input
                   class="form-control"
+                  type="email"
                   name="email"
                   placeholder="البريد الإلكتروني"
                 />
@@ -61,8 +65,8 @@
                               class="fas fa-plus-circle"
                               style="color: #03a9f4"
                             ></i>
-                            اختر الملف (يمكنك إضافة أكثر من صورة)
-                          </div>
+                            اختر الملف
+                         </div>
                           <a
                             href="javascript:void(0)"
                             data-bs-toggle="modal"
@@ -131,7 +135,7 @@
                           id="file-upload-for-label-click1"
                           class="custom-file-container__custom-file__custom-file-input"
                           accept="application/pdf,image/*"
-                          multiple
+                          name="image"
                           aria-label="Choose File"
                         />
                         <input

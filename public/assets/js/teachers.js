@@ -1,76 +1,6 @@
-const data = [
-    {
-        name: "الأستاذ/ ايمن عبد الله",
-        lang: "العربية",
-        subject: "مادة الفيزياء",
-
-        mobile: "49123657894",
-        grade: "الصف الأول الثانوي",
-        area: "القاهرة",
-        center: "بسملة",
-        place: "المعادى",
-        image: "assets/images/teachers.jpg",
-    },
-    {
-        name: "الأستاذ/ طارق محمد",
-        lang: "العربية",
-        subject: "مادة الرياضيات",
-        place: "المعادى",
-        mobile: "123456789101",
-        grade: "الصف الأول الثانوي",
-        area: "الاسكندريه",
-        center: "مكة",
-        image: "assets/images/teachers.jpg",
-    },
-    {
-        name: "الأستاذ/عدلى أحمد",
-        lang: "العربية",
-        subject: "مادة التاريخ",
-        mobile: "65478123490",
-        grade: "الصف الثاني الثانوي",
-        area: "الاسكندريه",
-        center: "بسملة",
-        place: "المعادى",
-        image: "assets/images/teachers.jpg",
-    },
-    {
-        name: "الأستاذة/عزة محمد",
-        lang: "الانجليزية",
-        subject: "مادة الأحياء",
-        mobile: "32164985017",
-        grade: "الصف الثالث الثانوي",
-        area: "القاهرة",
-        center: "بسملة",
-        place: "مدينة نصر",
-        image: "assets/images/teachers.jpg",
-    },
-    {
-        name: "الأستاذ/ عمر عبد الله",
-        lang: "الفرنسية",
-        subject: "مادة الفيزياء",
-        center: "مكة",
-        place: "مدينة نصر",
-
-        mobile: "46987523154",
-        grade: "الصف الأول الثانوي",
-        area: "الاسكندريه",
-
-        image: "assets/images/teachers.jpg",
-    },
-    {
-        name: "الأستاذ/ محمود زيدان",
-        lang: "الفرنسية",
-        center: "بسملة",
-        subject: "مادة التاريخ",
-        mobile: "65478123496",
-        grade: "الصف الثالث الثانوي",
-        area: "الاسكندريه",
-        place: "مدينة نصر",
-
-        image: "assets/images/teachers.jpg",
-    },
-];
-
+var teachersData= $('#teachersData').val();
+const data = JSON.parse(teachersData);
+console.log(data);
 var teachers = "",
     langs = "",
     names = "",
@@ -269,7 +199,7 @@ $(document).ready(function () {
     });
 });
 $(document).on('click','.teacher-inner', function() {
-   return false 
+   return false
 })
 function myFunction(x) {
     x.classList.toggle("fas");

@@ -20,13 +20,13 @@
 
                     <div class="col-md-6 mb-2">
                         <div class="mb-2">
-                            <div class="add-phone-field">
+                            <div id="add-phone-field" class="add-phone-field">
                                 <label for="phones">رقم هاتف المعلم <span class="red">*</span></label>
                                 <i class="fas fa-plus-circle" style="color: #03a9f4"></i>
                             </div>
                             <input class="form-control" type="text" name="phones[]" id="phones" placeholder="رقم الهاتف" required/>
                             <div class="invalid-feedback"> هذا الحقل مطلوب</div>
-                            <div class="phone-wrapper"></div>
+                            <div id="phone-wrapper" class="phone-wrapper"></div>
                         </div>
                     </div>
 
@@ -52,92 +52,7 @@
                         نبذة تعريفية
                     </x-form.textarea>
 
-
-                    <div class="col-md-6 d-none">
-                        <div class="mb-3">
-                            <div
-                                class="custom-file-container"
-                                data-upload-id="myUniqueUploadId"
-                            >
-                                <label
-                                    for="file-upload-for-label-click"
-                                    class="w-100 mb-2"
-                                >
-                                    <div
-                                        class="d-flex justify-content-between"
-                                    >
-                                        <div style="cursor: pointer" class="add-teacher-file">
-                                            <i
-                                                class="fas fa-plus-circle"
-                                                style="color: #03a9f4"
-                                            ></i>
-                                            إضافة صورة شخصية للمعلم
-                                        </div>
-                                        <a
-                                            href="javascript:void(0)"
-                                            data-bs-toggle="modal" data-bs-target="#exampleModal"
-
-                                            title="Clear Image"
-                                        >
-                                            <i
-                                                class="fas fa-trash-alt"
-                                                style="color: #f44336"
-                                            ></i>
-                                        </a>
-                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content" style="max-width: 329px; margin: auto; padding: 9px;">
-                                                    <div class="modal-header pb-0">
-                                                        <h6 class="text-center w-100" id="exampleModalLabel">هل تريد حذف جميع المرفقات؟    </h6>
-                                                    </div>
-                                                    <div class="modal-footer text-center justify-content-center">
-                                                        <button
-                                                            type="button"
-                                                            style="background-color: #dc3545;"
-                                                            data-bs-dismiss="modal"
-                                                            class="btn btn-sm btn-danger custom-file-container__image-clear" >
-                                                            نعم
-                                                        </button>
-                                                        <button type="button"
-                                                                class="btn btn-sm btn-secondary custom-file-container__image-clear"
-                                                                data-bs-dismiss="modal">لا</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </label>
-                                <label
-                                    style="display: none"
-                                    class="custom-file-container__custom-file"
-                                >
-                                    <input
-                                        type="file"
-                                        id="file-upload-for-label-click"
-                                        class="custom-file-container__custom-file__custom-file-input"
-                                        accept="application/pdf,image/*"
-                                    />
-                                    <input
-                                        type="hidden"
-                                        name="MAX_FILE_SIZE"
-                                    />
-                                    <span
-                                        class="custom-file-container__custom-file__custom-file-control"
-                                    ></span>
-                                </label>
-                                <div
-                                    class="custom-file-container__image-preview"
-                                    id="video-preview"
-                                    style="height: 150px; margin: 0"
-                                ></div>
-                                <div class="invalid-feedback">
-                                    هذا الحقل يجب أن يحتوي على صور
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="mb-3">
 
                             <div
@@ -201,9 +116,10 @@
                                         type="file"
                                         id="file-upload-for-label-click1"
                                         class="custom-file-container__custom-file__custom-file-input"
-                                        accept="application/pdf,image/*"
+                                        accept="image/*"
                                         multiple
                                         aria-label="Choose File"
+                                        name = "images[]"
                                     />
                                     <input
                                         type="hidden"
@@ -232,7 +148,6 @@
                             <div class="mb-3">
                                 <div
                                     class="custom-file-container"
-                                    data-upload-id="myUniqueUploadId3"
                                 >
                                     <label
                                         for="file-upload-for-label-click3"
@@ -242,78 +157,12 @@
                                             class="d-flex justify-content-between"
                                         >
                                             <div style="cursor: pointer" class="add-teacher-file">
-                                                <i
-                                                    class="fas fa-plus-circle"
-                                                    style="color: #03a9f4"
-                                                ></i>
                                                 إضافة فيديو تعريفي
-                                            </div>
-
-                                            <a
-                                                href="javascript:void(0)"
-                                                data-bs-toggle="modal" data-bs-target="#exampleModal2"
-
-                                                title="Clear Image"
-                                            >
-                                                <i
-                                                    class="fas fa-trash-alt"
-                                                    style="color: #f44336"
-                                                ></i>
-                                            </a>
-                                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content" style="max-width: 329px; margin: auto; padding: 9px;">
-                                                        <div class="modal-header pb-0">
-                                                            <h6 class="text-center w-100" id="exampleModal2Label">هل تريد حذف جميع المرفقات؟    </h6>
-                                                        </div>
-                                                        <div class="modal-footer text-center justify-content-center">
-                                                            <button
-                                                                type="button"
-                                                                style="background-color: #dc3545;"
-                                                                data-bs-dismiss="modal"
-                                                                class="btn btn-sm btn-danger custom-file-container__image-clear" >
-                                                                نعم
-                                                            </button>
-                                                            <button type="button"
-                                                                    class="btn btn-sm btn-secondary "
-                                                                    data-bs-dismiss="modal">لا</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </label>
-                                    <span class="gray">
-                                            يجب ألا تزيد مساحة الفيديو عن 25
-                                            ميجابايت
-                                        </span>
-                                    <label
-                                        style="display: none"
-                                        class="custom-file-container__custom-file"
-                                    >
-                                        <input
-                                            type="file"
-                                            id="file-upload-for-label-click3"
-                                            class="custom-file-container__custom-file__custom-file-input"
-                                            accept="video/mp4,video/x-m4v,video/*"
-                                            multiple
-                                            aria-label="Choose File"
-                                        />
-                                        <input
-                                            type="hidden"
-                                            name="MAX_FILE_SIZE"
-                                            value="10485760"
-                                        />
-                                        <span
-                                            class="custom-file-container__custom-file__custom-file-control"
-                                        ></span>
-                                    </label>
-                                    <div
-                                        class="custom-file-container__image-preview"
-                                        style="height: 100px; margin: 0"
-                                    ></div>
                                     <div>
-                                        <input class="mt-1 form-control" type="text" name="name" id="teacher"
+                                        <input class="mt-1 form-control" type="text" name="youtube"
                                                placeholder="إضافة رابط من اليوتيوب" >
 
                                     </div>
@@ -330,11 +179,11 @@
                             <select
                                 required
                                 class="form-control"
-                                name="language"
+                                name=""
                                 id="language"
                             >
                                 <option value=""></option>
-                                <option value="ar">الأزهرية</option>
+                                {{-- <option value="ar">الأزهرية</option> --}}
                                 <option value="en">العامة</option>
                             </select>
                             <div class="invalid-feedback  mt-1">هذا الحقل مطلوب </div>
@@ -355,39 +204,35 @@
 
                     <div class="col-md-6">
                         <div class="register__select mb-2">
-                            <label for="language">التدريس باللغة <span class="red">*</span></label>
+                            <label for="subjects">المادة الدراسية <span class="red">*</span></label>
                             <select
-                                required
-                                class="form-control"
-                                name="language"
-                                id="language"
+                            required
+                            class="form-control multiple"
+                            name="subjects[]"
+                            multiple="multiple"
+                            id="subjects"
                             >
-                                <option value=""></option>
-                                <option value="ar">العربية</option>
-                                <option value="en">الإنجليزية</option>
-                                <option value="fr">الفرنسية</option>
-                            </select>
-                            <div class="invalid-feedback  mt-1">هذا الحقل مطلوب </div>
-                        </div>
+                            @foreach($subjects as $subject)
+                                <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                            @endforeach
+                        </select>
+                        <div class="invalid-feedback  mt-1">هذا الحقل مطلوب </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="register__select mb-2">
-                            <label for="role">الصف الدراسي <span class="red">*</span></label>
-                            <select
-                                required
-                                class="form-control multiple"
-                                multiple="multiple"
-                                name="role"
-                                id="role"
-                            >
-                                <option value="first">الأول الثانوي</option>
-                                <option value="second">
-                                    الثاني الثانوي
-                                </option>
-                                <option value="third">
-                                    الثالث الثانوي
-                                </option>
-                            </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="register__select mb-2">
+                        <label for="years">الصف الدراسي <span class="red">*</span></label>
+                        <select
+                        required
+                        class="form-control multiple"
+                        multiple="multiple"
+                        name="years[]"
+                        id="years"
+                        >
+                        @foreach($years as $year)
+                            <option value="{{ $year->id }}">{{ $year->name }}</option>
+                        @endforeach
+                        </select>
                             <div class="invalid-feedback  mt-1">هذا الحقل مطلوب </div>
                         </div>
                     </div>
@@ -405,10 +250,10 @@
                             </div>
                             <div id="website-fields">
                                 <div class="d-flex justify-content-between field-wrapper">
-                                    <input type="text" id="site" class="form-control" style="width: 95%" placeholder="أضف موقعك الإلكتروني">
-                                    <button id="btn-remove" class="add-field remove d-flex align-items-center" type="button">
+                                    <input type="text" id="site" class="form-control" placeholder="أضف موقعك الإلكتروني">
+                                    {{-- <button id="btn-remove" class="add-field remove d-flex align-items-center" type="button">
                                         <i class="far fa-trash-alt"></i>
-                                    </button>
+                                    </button> --}}
                                 </div>
                             </div>
                         </div>
@@ -433,15 +278,15 @@
             (function () {
                 "use strict";
                 // $("select")
-                $("select").selectize({
+                $("#years").selectize({
+                    maxItems: null,
+                });
+                $("#subjects").selectize({
                     maxItems: null,
                 });
                 var upload = new FileUploadWithPreview("myUniqueUploadId");
                 var anotherUpload = new FileUploadWithPreview(
                     "myUniqueUploadId2"
-                );
-                var anotherUpload = new FileUploadWithPreview(
-                    "myUniqueUploadId3"
                 );
                 $("#add-field").click(function () {
                     let template = `<div class="d-flex justify-content-between field-wrapper">
@@ -473,7 +318,7 @@
                       <input
                         class="form-control"
                         type="text"
-                        name="phone"
+                        name="phones[]"
                         placeholder="رقم الهاتف"
                       />
                     </div>

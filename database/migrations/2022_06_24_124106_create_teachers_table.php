@@ -20,12 +20,20 @@ class CreateTeachersTable extends Migration
                 ->constrained()
                 ->nullOnDelete()
                 ->cascadeOnUpdate();
-
+            $table->foreignId('teaching_language_id')
+                ->nullable()
+                ->references('id')
+                ->on('languages')
+                ->constrained()
+                ->nullOnDelete()
+                ->cascadeOnUpdate();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('phone_number')->nullable();
+            $table->string('youtube');
+            $table->string('school');
+            $table->text('brief');
             $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
