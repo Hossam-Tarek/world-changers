@@ -77,7 +77,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($teacher));
 
-        Auth::login($teacher);
+        Auth::guard('teacher')->login($teacher);
 
         return redirect(RouteServiceProvider::TEACHER);
     }
