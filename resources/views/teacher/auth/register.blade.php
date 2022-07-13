@@ -42,11 +42,11 @@
                         تأكيد كلمة المرور<span class="red">*</span>
                     </x-form.input>
 
-                    <livewire:main.state-city-select group-class="col-md-6"/>
-
                     <x-form.input name="school" class="col-md-6 mb-2" value="{{ old('school') }}" style="direction: rtl" place-holder="المدرسة" required>
                         المدرسة /المركز التعليمي<span class="red">*</span>
                     </x-form.input>
+                    
+                    <livewire:main.state-city-select group-class="col-md-6"/>
 
                     <x-form.textarea name="brief" rows="7" class="col-md-12 mb-2" value="{{ old('brief') }}" style="direction: rtl" place-holder="إضافة النبذة التعريفية هنا... ">
                         نبذة تعريفية

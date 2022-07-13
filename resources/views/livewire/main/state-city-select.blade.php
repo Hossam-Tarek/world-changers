@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="row mx-0 px-0">
     <div class="form-group {{ $groupClass ?? ''  }}">
         <label for="state_id">{{ __('admin.state') }}</label>
         <select wire:model="stateId" name="state_id" name="state_id" id="state_id" class="form-control">
