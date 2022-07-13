@@ -10,7 +10,7 @@
                 <h2>إنشاء حساب للمعلم</h2>
             </header>
 
-            <form action="{{ route('teacher.register') }}" method="POST" class="needs-validation" action="" novalidate>
+            <form action="{{ route('teacher.register') }}" method="POST" class="needs-validation" action="" enctype="multipart/form-data" novalidate>
                 @csrf
 
                 <div class="row w-100 mx-0 px-0">
@@ -52,12 +52,101 @@
                         نبذة تعريفية
                     </x-form.textarea>
 
-                    <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+
+                            <div
+                                class="custom-file-container"
+                                data-upload-id="myUniqueUploadId2"
+                            >
+
+                                <label
+                                    for="file-upload-for-label-click2"
+                                    class="w-100 mb-2"
+                                >
+                                    <div
+                                        class="d-flex justify-content-between"
+                                    >
+                                        <div style="cursor: pointer" class="add-teacher-file">
+                                            <i
+                                                class="fas fa-plus-circle"
+                                                style="color: #03a9f4"
+                                            ></i>
+                                            إضافة صورة شخصية للمعلم
+                                        </div>
+                                        <a
+                                            href="javascript:void(0)"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal33"
+
+                                            title="Clear Image"
+                                        >
+                                            <i
+                                                class="fas fa-trash-alt"
+                                                style="color: #f44336"
+                                            ></i>
+                                        </a>
+                                        <div class="modal fade" id="exampleModal33" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content" style="max-width: 329px; margin: auto; padding: 9px;">
+                                                    <div class="modal-header pb-0">
+                                                        <h6 class="text-center w-100" id="exampleModalLabel">هل تريد حذف جميع المرفقات؟    </h6>
+                                                    </div>
+                                                    <div class="modal-footer text-center justify-content-center">
+                                                        <button
+                                                            type="button"
+                                                            style="background-color: #dc3545;"
+                                                            data-bs-dismiss="modal"
+                                                            class="btn btn-sm btn-danger custom-file-container__image-clear" >
+                                                            نعم
+                                                        </button>
+                                                        <button type="button"
+                                                                class="btn btn-sm btn-secondary "
+                                                                data-bs-dismiss="modal">لا</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label
+                                    style="display: none"
+                                    class="custom-file-container__custom-file"
+                                >
+                                    <input
+                                        type="file"
+                                        id="file-upload-for-label-click2"
+                                        class="custom-file-container__custom-file__custom-file-input"
+                                        accept="image/*"
+                                        aria-label="Choose File"
+                                        name = "avatar"
+                                    />
+                                    <input
+                                        type="hidden"
+                                        name="MAX_FILE_SIZE"
+                                        value="10485760"
+                                    />
+                                    <span
+                                        class="custom-file-container__custom-file__custom-file-control"
+                                    ></span>
+                                </label>
+                                <div class="invalid-feedback  mt-0">
+                                    هذا الحقل يجب أن يحتوي على صور
+                                </div>
+                                <div
+                                    class="custom-file-container__image-preview"
+                                    style="height: 150px; margin: 0"
+                                ></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
                         <div class="mb-3">
 
                             <div
                                 class="custom-file-container multiple"
-                                data-upload-id="myUniqueUploadId2"
+                                data-upload-id="myUniqueUploadId3"
                             >
 
                                 <label
@@ -250,7 +339,7 @@
                             </div>
                             <div id="website-fields">
                                 <div class="d-flex justify-content-between field-wrapper">
-                                    <input type="text" id="site" class="form-control" placeholder="أضف موقعك الإلكتروني">
+                                    <input type="text" name="sites[]" id="site" class="form-control" placeholder="أضف موقعك الإلكتروني">
                                     {{-- <button id="btn-remove" class="add-field remove d-flex align-items-center" type="button">
                                         <i class="far fa-trash-alt"></i>
                                     </button> --}}
@@ -286,6 +375,9 @@
                 });
                 var upload = new FileUploadWithPreview("myUniqueUploadId");
                 var anotherUpload = new FileUploadWithPreview(
+                    "myUniqueUploadId3"
+                );
+                var anotherUpload = new FileUploadWithPreview(
                     "myUniqueUploadId2"
                 );
                 $("#add-field").click(function () {
@@ -295,6 +387,7 @@
                   id="site"
                   class="form-control"
                   style="width: 95%"
+                  name="sites[]"
                   placeholder="أضف موقعك الإلكتروني"
                 />
                 <button
