@@ -74,4 +74,9 @@ class Teacher extends Authenticatable
     {
         return $this->belongsTo(City::class);
     }
+
+    public function images()
+    {
+        return $this->morphMany(File::class, 'fileable');
+    }
 }
