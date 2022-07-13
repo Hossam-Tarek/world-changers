@@ -29,7 +29,7 @@ class RegisteredUserController extends Controller
     {
         return view('teacher.auth.register', [
             'languages' => Language::all(),
-            'subjects' => Subject::all(),
+            'subjects' => Subject::query()->with('year')->get(),
             'years' => Year::all(),
         ]);
     }
@@ -77,7 +77,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($teacher));
 
-        Auth::login($teacher);
+        Auth::guard('teacher')->login($teacher);
 
         return redirect(RouteServiceProvider::TEACHER);
     }
