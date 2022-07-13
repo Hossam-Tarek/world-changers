@@ -85,7 +85,7 @@ class RegisteredUserController extends Controller
         event(new Registered($teacher));
 
         Auth::guard('teacher')->login($teacher);
-
+        toast('تم إنشاء الحساب بنجاح','success');
         return redirect(RouteServiceProvider::TEACHER);
     }
 }

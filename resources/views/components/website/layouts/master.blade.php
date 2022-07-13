@@ -32,7 +32,7 @@
         <x-website.includes.use-free-modal/>
 
         {{ $slot }}
-
+        @include('sweetalert::alert')
         <x-website.includes.footer/>
 
         <!-- scripts -->
