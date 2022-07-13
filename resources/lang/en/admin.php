@@ -75,5 +75,9 @@ return [
     'download' => 'Download',
     'excel' => 'Excel',
     'data' => 'Excel',
+
+    'in_arabic' => 'in Arabic',
+    'in_english' => 'in English',
+    'in_french' => 'in French',
 ];
 

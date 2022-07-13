@@ -54,7 +54,7 @@ final class Subjects extends PowerGridComponent
     */
     public function datasource(): ?Builder
     {
-        return Subject::query()->with(['year', 'department']);
+        return Subject::query()->with(['year']);
     }
 
     /*
@@ -87,15 +87,11 @@ final class Subjects extends PowerGridComponent
     {
         return PowerGrid::eloquent()
             ->addColumn('id')
-            ->addColumn('name')
+            ->addColumn('name_ar')
+            ->addColumn('name_en')
+            ->addColumn('name_fr')
             ->addColumn('year', function(Subject $model) {
                 return $model->year->name;
-            })
-            ->addColumn('department', function(Subject $model) {
-                return isset($model->department) ? $model->department->name : '';
-            })
-            ->addColumn('semester', function(Subject $model) {
-                return Semester::get($model->semester);
             });
     }
 
@@ -122,8 +118,22 @@ final class Subjects extends PowerGridComponent
                 ->makeInputRange(),
 
             Column::add()
-                ->title(trans('admin.name'))
-                ->field('name')
+                ->title(trans('admin.name').' '.__('admin.in_arabic'))
+                ->field('name_ar')
+                ->sortable()
+                ->searchable()
+                ->makeInputText(),
+
+            Column::add()
+                ->title(trans('admin.name').' '.__('admin.in_english'))
+                ->field('name_en')
+                ->sortable()
+                ->searchable()
+                ->makeInputText(),
+
+            Column::add()
+                ->title(trans('admin.name').' '.__('admin.in_french'))
+                ->field('name_fr')
                 ->sortable()
                 ->searchable()
                 ->makeInputText(),
@@ -131,14 +141,6 @@ final class Subjects extends PowerGridComponent
             Column::add()
                 ->title(trans('admin.year'))
                 ->field('year', 'years.name'),
-
-            Column::add()
-                ->title(trans('admin.department'))
-                ->field('department', 'departments.name'),
-
-            Column::add()
-                ->title(trans('admin.semester'))
-                ->field('semester'),
         ];
     }
 

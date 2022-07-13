@@ -17,16 +17,21 @@ class SubjectsImport implements ToModel, WithValidation, WithHeadingRow
     */
     public function model(array $row)
     {
-        return new Subject($row);
+        $subject = Subject::create($row);
+        $subject->departments()->sync(explode(',', $row['departments']));
+
+        return $subject;
     }
 
     public function rules(): array
     {
         return [
             'year_id' => 'required|exists:years,id',
-            'department_id' => 'required|exists:departments,id',
-            'name' => 'required|string|max:255',
-            'semester' => 'required|in:' . implode(',',array_keys(Semester::getList())),
+            'departments' => 'required',
+            'departments.*' => 'required|exists:departments,id',
+            'name_ar' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+            'name_fr' => 'required|string|max:255',
         ];
     }
 }
