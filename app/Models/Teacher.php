@@ -78,5 +78,9 @@ class Teacher extends Authenticatable
     public function sites()
     {
         return $this->hasMany(Site::class);
+        
+    public function images()
+    {
+        return $this->morphMany(File::class, 'fileable');
     }
 }

@@ -69,5 +69,15 @@ return [
 
     'new_subject_added' => 'New subject added successfully',
     'new_subject_updated' => 'Subject updated successfully',
+
+    'import_failed' => 'Import data failed.',
+    'template' => 'Template',
+    'download' => 'Download',
+    'excel' => 'Excel',
+    'data' => 'Excel',
+
+    'in_arabic' => 'in Arabic',
+    'in_english' => 'in English',
+    'in_french' => 'in French',
 ];
 

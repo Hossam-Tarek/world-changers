@@ -15,14 +15,17 @@ class CreateSubjectTeacherTable extends Migration
     {
         Schema::create('subject_teacher', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('subject_id')
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
+                
             $table->foreignId('teacher_id')
             ->constrained()
             ->cascadeOnUpdate()
             ->cascadeOnDelete();
+
             $table->timestamps();
         });
     }

@@ -1,36 +1,61 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<x-website.layouts.master>
+    <x-slot name="styles">
+    </x-slot>
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+    <section class="login-form after-navbar-section py-5">
+        <div class="container">
+            <header class="main-header">
+                <span></span>
+                <h2>اعادة تعيين كلمة المرور</h2>
+            </header>
         </div>
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('teacher.password.email') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+        <div class="row justify-content-center w-100 mx-0 px-0">
+            <div class="container"></div>
+            <div class="col-md-5">
+                <figure class="d-flex align-items-center justify-content-center h-100">
+                    <img src="{{ asset('assets/images/flower.jpg') }}" alt="contact-us" />
+                </figure>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
+
+            <div class="col-md-5 login-form my-auto">
+                <!-- Session Status -->
+                <x-auth-session-status class="mb-4" :status="session('status')" />
+
+                <!-- Validation Errors -->
+                <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+                <form action="{{ route('teacher.password.email') }}" method="POST" class="needs-validation" novalidate>
+                    @csrf
+
+                    <div class="mb-4 text-sm text-gray-600">
+                        {{ __('teacher.forget_desc') }}
+                    </div>
+
+                    <x-form.input class="mb-2" name="email" :label="false" place-holder="البريد الإلكتروني" required>البريد الإلكتروني <span class="red">*</span></x-form.input>
+
+                    <button type="submit" class="btn w-full">
+                        {{ __('teacher.reset_password') }}
+                    </button>
+                </form>
             </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+
+        </div>
+    </section>
+
+    <x-slot name="scripts">
+        <script>
+            $(document).ready(function () {
+                $(document).click(function (event) {
+                    var clickover = $(event.target);
+                    var _opened = $(".navbar-collapse").hasClass("show");
+                    if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+                        $("button.navbar-toggler").click();
+                    }
+                });
+            });
+        </script>
+    </x-slot>
+</x-website.layouts.master>
+

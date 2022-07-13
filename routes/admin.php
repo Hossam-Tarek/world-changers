@@ -32,6 +32,8 @@ Route::middleware('isAdmin')->group(function () {
     Route::resource('/admins', AdminController::class)->except('show')->middleware('role_or_permission:super-admin|admins,admin');
     Route::post('/admins/{admin}/password', [AdminController::class, 'changePassword'])->name('admins.password')->middleware('role_or_permission:super-admin|admins,admin');
 
-    Route::resource('/subjects', SubjectController::class)->except(['show', 'destroy'])->middleware('role_or_permission:super-admin|subject,admin');
+    Route::get('/subjects/template', [SubjectController::class, 'downloadTemplate'])->name('subjects.template')->middleware('role_or_permission:super-admin|subjects,admin');
+    Route::post('/appLabels/import', [SubjectController::class, 'import'])->name('subjects.import')->middleware('role_or_permission:super-admin|subjects,admin');
+    Route::resource('/subjects', SubjectController::class)->except(['show', 'destroy'])->middleware('role_or_permission:super-admin|subjects,admin');
     Route::resource('/pages', PageController::class)->only(['index', 'edit', 'update'])->middleware('role_or_permission:super-admin|pages,admin');
 });

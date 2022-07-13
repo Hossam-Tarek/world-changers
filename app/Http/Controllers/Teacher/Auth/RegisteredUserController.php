@@ -9,6 +9,7 @@ use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\Year;
 use App\Providers\RouteServiceProvider;
+use App\Traits\FileTrait;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +18,8 @@ use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
 {
+    use FileTrait;
+
     /**
      * Display the registration view.
      *
@@ -26,7 +29,7 @@ class RegisteredUserController extends Controller
     {
         return view('teacher.auth.register', [
             'languages' => Language::all(),
-            'subjects' => Subject::all(),
+            'subjects' => Subject::query()->with('year')->get(),
             'years' => Year::all(),
         ]);
     }
@@ -41,8 +44,6 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:teachers'],
@@ -68,15 +69,19 @@ class RegisteredUserController extends Controller
             $phone->number = $value;
             $teacher->phones()->save($phone);
        }
-    //    dd($request->sites);
        $teacher->subjects()->sync($request->subjects);
        $teacher->years()->sync($request->years);
        foreach($request->sites as $site){
            $teacher->sites()->create(['site' => $site]);
        }
+
+        if ($request->hasFile('images')) {
+            self::uploadFiles($request->images, $teacher, 'teachers/');
+        }
+
         event(new Registered($teacher));
 
-        Auth::login($teacher);
+        Auth::guard('teacher')->login($teacher);
 
         return redirect(RouteServiceProvider::TEACHER);
     }

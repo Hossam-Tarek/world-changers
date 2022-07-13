@@ -42,11 +42,11 @@
                         تأكيد كلمة المرور<span class="red">*</span>
                     </x-form.input>
 
-                    <livewire:main.state-city-select group-class="col-md-6"/>
-
                     <x-form.input name="school" class="col-md-6 mb-2" value="{{ old('school') }}" style="direction: rtl" place-holder="المدرسة" required>
                         المدرسة /المركز التعليمي<span class="red">*</span>
                     </x-form.input>
+
+                    <livewire:main.state-city-select group-class="col-md-6"/>
 
                     <x-form.textarea name="brief" rows="7" class="col-md-12 mb-2" value="{{ old('brief') }}" style="direction: rtl" place-holder="إضافة النبذة التعريفية هنا... ">
                         نبذة تعريفية
@@ -294,18 +294,13 @@
                     <div class="col-md-6">
                         <div class="register__select mb-2">
                             <label for="subjects">المادة الدراسية <span class="red">*</span></label>
-                            <select
-                            required
-                            class="form-control multiple"
-                            name="subjects[]"
-                            multiple="multiple"
-                            id="subjects"
-                            >
-                            @foreach($subjects as $subject)
-                                <option value="{{ $subject->id }}">{{ $subject->name }}</option>
-                            @endforeach
-                        </select>
-                        <div class="invalid-feedback  mt-1">هذا الحقل مطلوب </div>
+
+                            <select class="form-control multiple" name="subjects[]" multiple="multiple" id="subjects" required>
+                                @foreach($subjects as $subject)
+                                    <option value="{{ $subject->id }}">{{ $subject->year->name.' - '.$subject->name_ar }}</option>
+                                @endforeach
+                            </select>
+                            <div class="invalid-feedback  mt-1">هذا الحقل مطلوب </div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -377,9 +372,11 @@
                 var anotherUpload = new FileUploadWithPreview(
                     "myUniqueUploadId3"
                 );
+
                 var anotherUpload = new FileUploadWithPreview(
                     "myUniqueUploadId2"
                 );
+
                 $("#add-field").click(function () {
                     let template = `<div class="d-flex justify-content-between field-wrapper">
                 <input

@@ -4,13 +4,17 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SubjectRequest;
-use App\Models\Department;
+use App\Imports\SubjectsImport;
 use App\Models\Subject;
-use App\Models\Year;
-use Illuminate\Http\Request;
+use App\Traits\ImportTrait;
+use Illuminate\Support\Collection;
 
 class SubjectController extends Controller
 {
+    use ImportTrait;
+
+    private $importClass = SubjectsImport::class;
+
     public function index()
     {
         return view('admin.subjects.index');
@@ -24,9 +28,9 @@ class SubjectController extends Controller
     public function store(SubjectRequest $request)
     {
         $data = $request->validated();
-        $data['semester'] ??= null;
-        $data['department_id'] ??= null;
-        Subject::create($data);
+        $subject = Subject::create($data);
+        $subject->departments()->sync($data['departments']);
+
         toast(trans('admin.new_subject_added'),'success');
 
         return redirect()->route('admin.subjects.index');
@@ -43,8 +47,22 @@ class SubjectController extends Controller
         $data['semester'] ??= null;
         $data['department_id'] ??= null;
         $subject->update($data);
+        $subject->departments()->sync($data['departments']);
         toast(trans('admin.new_subject_updated'),'success');
 
         return redirect()->route('admin.subjects.index');
+    }
+
+    public function downloadTemplate()
+    {
+        $headingRow = [
+            'year_id',
+            'name_ar',
+            'name_en',
+            'name_fr',
+            'departments',
+        ];
+
+        return (new Collection([$headingRow]))->downloadExcel('subjects.xlsx');
     }
 }
