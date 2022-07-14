@@ -42,7 +42,7 @@ for (var i = 0; i < data.length; i++) {
         grade +
         "' data-place='" +
         place +
-        "'><a  href='' class='teacher-inner d-block'><img src='" +
+        "'><a  href='https://web.whatsapp.com/' class='teacher-inner d-block'><img src='" +
         image +
         "'>" +
         `<div class="d-flex align-items-center"> <h5>${name}<i onclick="myFunction(this)"  class="add-heart-red _icon fal fa-heart"></i>
@@ -198,9 +198,9 @@ $(document).ready(function () {
         $(".filter-hidden").toggleClass("hidden");
     });
 });
-$(document).on('click','.teacher-inner', function() {
-   return false
-})
+// $(document).on('click','.teacher-inner', function() {
+//    return false
+// })
 function myFunction(x) {
     x.classList.toggle("fas");
     console.log("ok");
