@@ -13,13 +13,23 @@ class StateCitySelect extends Component
     public $cities;
     public $cityId;
     public $groupClass;
+    public $userCity;
+    public $userState;
 
-    public function mount($groupClass = '')
+    public function mount($groupClass = '', $city = null)
     {
         $this->groupClass = $groupClass;
 
         $this->states = State::all();
         $this->cities = collect();
+
+        if ($city) {
+            $this->userCity = $city;
+            $this->userState = $city->state;
+            $this->stateId = $city->state_id;
+            $this->cities = $this->userState->cities;
+            $this->cityId = $city->id;
+        }
     }
 
     public function updatedStateId($id)

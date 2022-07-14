@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Teacher;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\ChangePasswordRequest;
 use App\Http\Requests\Teacher\UpdateProfileRequest;
+use App\Models\Language;
+use App\Models\Subject;
+use App\Models\Year;
 use App\Traits\FileTrait;
 use Illuminate\Support\Facades\Hash;
 
@@ -12,10 +15,18 @@ class ProfileController extends Controller
 {
     use FileTrait;
 
+    public function show()
+    {
+        dd('Put show profile page here');
+    }
+
     public function edit()
     {
-        return view('teacher.profile', [
-            'teacher' => auth('teacher')->user(),
+        return view('teacher.profile.edit', [
+            'teacher' => auth('teacher')->user()->load(['sites', 'images', 'phones', 'years', 'subjects', 'city']),
+            'languages' => Language::all(),
+            'years' => Year::all(),
+            'subjects' => Subject::all(),
         ]);
     }
 

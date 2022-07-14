@@ -1,4 +1,4 @@
-<x-website.layouts.master>
+<x-teacher.layouts.master>
     <x-slot name="styles">
         <livewire:styles/>
     </x-slot>
@@ -301,22 +301,22 @@
                                 @endforeach
                             </select>
                             <div class="invalid-feedback  mt-1">هذا الحقل مطلوب </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="register__select mb-2">
-                        <label for="years">الصف الدراسي <span class="red">*</span></label>
-                        <select
-                        required
-                        class="form-control multiple"
-                        multiple="multiple"
-                        name="years[]"
-                        id="years"
-                        >
-                        @foreach($years as $year)
-                            <option value="{{ $year->id }}">{{ $year->name }}</option>
-                        @endforeach
-                        </select>
+                    <div class="col-md-6">
+                        <div class="register__select mb-2">
+                            <label for="years">الصف الدراسي <span class="red">*</span></label>
+                            <select
+                                required
+                                class="form-control multiple"
+                                multiple="multiple"
+                                name="years[]"
+                                id="years"
+                            >
+                                @foreach($years as $year)
+                                    <option value="{{ $year->id }}">{{ $year->name }}</option>
+                                @endforeach
+                            </select>
                             <div class="invalid-feedback  mt-1">هذا الحقل مطلوب </div>
                         </div>
                     </div>
@@ -402,7 +402,8 @@
                 $(document).on("click", "#btn-remove", function () {
                     $(this).closest(".field-wrapper").remove();
                 });
-                $("#add-phone-field").click(function () {
+                $("#add-phone-field1").click(function () {
+                    console.log('wtffffff')
                     let template = `<div class="row phone-field-wrapper">
                     <div class="col-11">
                       <input
@@ -452,4 +453,5 @@
 
         <livewire:scripts/>
     </x-slot>
-</x-website.layouts.master>
+
+</x-teacher.layouts.master>

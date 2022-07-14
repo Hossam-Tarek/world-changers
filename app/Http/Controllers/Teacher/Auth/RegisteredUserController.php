@@ -54,15 +54,15 @@ class RegisteredUserController extends Controller
             'years' => 'required',
             'years.*' => 'required',
             'sites' => 'nullable',
-            'sites.*' => 'nullable',
+            'sites.*' => 'nullable|string|max:255',
             'subjects' => 'required',
             'subjects.*' => 'required',
             'teaching_language_id' => 'required|exists:languages,id',
-            'school' => 'required|string|max:255',
+            'school' => 'nullable|string|max:255',
             'brief' => 'nullable|string',
             'youtube' => 'nullable|string',
-            'images.*' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
-            'avatar' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000'
+            'avatar' => 'required|image|mimes:jpeg,jpg,png,gif|max:4096',
+            'images.*' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:4096',
         ]);
         $data['password'] = Hash::make($request->password);
         $data['image'] = self::uploadFile($request->file('avatar'), 'teachers/');

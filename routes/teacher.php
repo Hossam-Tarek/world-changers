@@ -20,7 +20,8 @@ Route::middleware('isTeacher')->group(function () {
     Route::get('/', HomeController::class)->name('home');
 
     Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
-        Route::get('/', [ProfileController::class, 'edit'])->name('edit');
+        Route::get('/', [ProfileController::class, 'show'])->name('show');
+        Route::get('/edit', [ProfileController::class, 'edit'])->name('edit');
         Route::put('/', [ProfileController::class, 'update'])->name('update');
         Route::post('/password', [ProfileController::class, 'changePassword'])->name('password');
     });
