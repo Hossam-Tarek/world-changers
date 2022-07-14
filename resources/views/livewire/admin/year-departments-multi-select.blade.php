@@ -14,7 +14,7 @@
 
     <div class="select2-purple mb-3">
         <label for="departments">{{ __('admin.departments') }}</label>
-        <select name="departments" class="select2 @error('departments') is-invalid @enderror" multiple="multiple" data-placeholder="{{ __('admin.choose').' '.__('admin.departments') }}" data-dropdown-css-class="select2-purple" style="width: 100%;">
+        <select name="departments[]" id="departments" class="select2 @error('departments') is-invalid @enderror" multiple="multiple" data-placeholder="{{ __('admin.choose').' '.__('admin.departments') }}" data-dropdown-css-class="select2-purple" style="width: 100%;">
             <option value="">{{ __('admin.choose').' '.__('admin.departments') }}</option>
             @foreach($departments as $department)
                 <option value="{{ $department->id }}"

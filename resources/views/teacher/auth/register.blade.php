@@ -72,7 +72,7 @@
                                                 class="fas fa-plus-circle"
                                                 style="color: #03a9f4"
                                             ></i>
-                                            إضافة صورة شخصية للمعلم
+                                            إضافة صورة شخصية للمعلمرقم هاتف المعلم <span class="red">*</span>
                                         </div>
                                         <a
                                             href="javascript:void(0)"

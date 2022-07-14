@@ -15,11 +15,13 @@ class CreateTeachersTable extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('city_id')
                 ->nullable()
                 ->constrained()
                 ->nullOnDelete()
                 ->cascadeOnUpdate();
+
             $table->foreignId('teaching_language_id')
                 ->nullable()
                 ->references('id')
@@ -27,14 +29,15 @@ class CreateTeachersTable extends Migration
                 ->constrained()
                 ->nullOnDelete()
                 ->cascadeOnUpdate();
+
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('youtube');
-            $table->string('school');
-            $table->text('brief');
             $table->string('image')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('school')->nullable();
+            $table->text('brief')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
