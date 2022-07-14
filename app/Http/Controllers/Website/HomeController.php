@@ -20,7 +20,7 @@ class HomeController extends Controller
             'email' => ['nullable', 'string', 'email', 'max:255'],
             'phone' => 'required',
             'message' => 'nullable|string',
-            // 'image' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000'
+            'image' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000'
         ]);
         // $data['image'] = self::uploadFile($request->image, 'contact/');
         Contact::create($data);

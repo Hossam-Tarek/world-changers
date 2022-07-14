@@ -61,8 +61,11 @@ class RegisteredUserController extends Controller
             'school' => 'required|string|max:255',
             'brief' => 'nullable|string',
             'youtube' => 'nullable|string',
+            'images.*' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000',
+            'avatar' => 'nullable|mimes:jpeg,jpg,png,gif|max:10000'
         ]);
         $data['password'] = Hash::make($request->password);
+        $data['image'] = self::uploadFile($request->file('avatar'), 'teachers/');
         $teacher = Teacher::create($data);
         foreach ($request->phones as $value) {
             $phone = new Phone();
@@ -82,7 +85,7 @@ class RegisteredUserController extends Controller
         event(new Registered($teacher));
 
         Auth::guard('teacher')->login($teacher);
-
+        toast('تم إنشاء الحساب بنجاح','success');
         return redirect(RouteServiceProvider::TEACHER);
     }
 }

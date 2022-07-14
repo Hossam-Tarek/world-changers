@@ -17,13 +17,13 @@ class TeacherResource extends JsonResource
         return [
             'name' => $this->name,
             'lang' => $this->lang->name,
-            'subject' => $this->subjects[0]->name,
+            'subject' => $this->subjects[0]->name_ar,
             'mobile' => $this->phones[0]->number,
             'grade' => $this->years[0]->name,
             'area' => $this->city->state->name,
             'center' => $this->school,
             'place' => $this->city->name,
-            'image' => isset($this->image) ? asset('$this->image') : asset('assets/images/teachers.jpg'),
+            'image' => isset($this->image) ? asset($this->image) : asset('assets/images/teachers.jpg'),
         ];
     }
 }
