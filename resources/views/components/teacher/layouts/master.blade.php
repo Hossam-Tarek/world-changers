@@ -1,83 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ env('APP_NAME') }} | {{ __('teacher.dashboard') }}</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ isset($title) && $title->isNotEmpty() ? $title : env('APP_NAME') }} | {{ __('teacher.dashboard') }}</title>
+    <!-- main-styles -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.rtl.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}" />
+    <link
+        rel="stylesheet"
+        href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+        crossorigin="anonymous"
+    />
+    <link
+        rel="stylesheet"
+        media="screen"
+        href="https://fontlibrary.org//face/droid-arabic-kufi"
+        type="text/css"
+    />
+    <!--style-->
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('admin-assets/plugins/fontawesome-free/css/all.min.css') }}">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('admin-assets/dist/css/adminlte.min.css') }}">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="{{ asset('admin-assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
     <style>
-        body {
-            font-family: 'Nunito', sans-serif;
+        .dd-ff.dropdown-menu.show {
+            left: 0 !important;
+            right: auto !important;
         }
     </style>
-
-    @if(isset($styles) && $styles->isNotEmpty()) {{ $styles }} @endif
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
 
-    <x-teacher.includes.header/>
+<body>
+<!-- start navbar -->
+<x-teacher.includes.header/>
+<!-- end navbar -->
 
-    <x-teacher.includes.sidebar/>
+<!-- Start Sidebar -->
+<x-teacher.includes.sidebar/>
+<!-- End Sidebar -->
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        @include('sweetalert::alert')
+{{ $slot }}
 
-                        <h1 class="m-0">@if(isset($pageTitle) && $pageTitle->isNotEmpty()) {{ $pageTitle }} @else {{ __('teacher.dashboard') }} @endif</h1>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div>
-        <!-- /.content-header -->
-
-        <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-                {{ $slot }}
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-
-    <x-teacher.includes.footer/>
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery -->
-<script src="{{ asset('admin-assets/plugins/jquery/jquery.min.js') }}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{ asset('admin-assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<!-- scripts -->
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/slick.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/index.js') }}"></script>
+<script src="{{ asset('assets/js/slider.js') }}"></script>
+<script src="{{ asset('assets/js/custom_teacher.js') }}"></script>
 <script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- overlayScrollbars -->
-<script src="{{ asset('admin-assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('admin-assets/dist/js/adminlte.js') }}"></script>
+    //count followers
+    var clicks = 0;
 
-@if(isset($scripts) && $scripts->isNotEmpty()) {{ $scripts }} @endif
+    function onClick() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    }
+</script>
 </body>
 </html>
