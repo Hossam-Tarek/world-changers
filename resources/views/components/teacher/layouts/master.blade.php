@@ -37,6 +37,7 @@
             right: auto !important;
         }
     </style>
+    @if(isset($styles) && $styles->isNotEmpty()) {{ $styles }} @endif
 </head>
 
 <body>
@@ -67,5 +68,6 @@
         document.getElementById("clicks").innerHTML = clicks;
     }
 </script>
+@if(isset($scripts) && $scripts->isNotEmpty()) {{ $scripts }} @endif
 </body>
 </html>

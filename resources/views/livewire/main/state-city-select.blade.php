@@ -4,7 +4,7 @@
         <select wire:model="stateId" name="state_id" name="state_id" id="state_id" class="form-control">
             <option value="">{{ __("admin.choose") . ' ' . __('admin.state') }}</option>
             @foreach($states as $state)
-                <option value="{{ $state->id }}">{{ $state->name }}</option>
+                <option value="{{ $state->id }}" {{ !empty($userState) && $userState->id == $state->id ? 'selected' : '' }}>{{ $state->name }}</option>
             @endforeach
         </select>
         @error('state_id')
@@ -17,7 +17,7 @@
         <select wire:model="cityId" name="city_id" id="city_id" class="form-control">
             <option value="">{{ __("admin.choose") .' '. __('admin.city') }}</option>
             @foreach($cities as $city)
-                <option value="{{ $city->id }}">{{ $city->name }}</option>
+                <option value="{{ $city->id }}" {{ !empty($userCity) && $userCity->id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
             @endforeach
         </select>
         @error('city_id')
