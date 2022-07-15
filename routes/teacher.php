@@ -23,8 +23,9 @@ Route::middleware('isTeacher')->group(function () {
         Route::get('/', [ProfileController::class, 'show'])->name('show');
         Route::get('/edit', [ProfileController::class, 'edit'])->name('edit');
         Route::post('/', [ProfileController::class, 'update'])->name('update');
-        Route::post('/password', [ProfileController::class, 'changePassword'])->name('password');
     });
+    Route::get('/change-password', [ProfileController::class, 'changePasswordView'])->name('password.change');
+    Route::post('/change-password', [ProfileController::class, 'changePassword']);
 });
 
 require __DIR__.'/teacher-auth.php';

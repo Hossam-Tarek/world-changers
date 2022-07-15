@@ -66,10 +66,15 @@ class ProfileController extends Controller
         return back();
     }
 
+    public function changePasswordView()
+    {
+        return view('teacher.change-password');
+    }
+
     public function changePassword(ChangePasswordRequest $request)
     {
         auth('teacher')->user()->update(['password' => Hash::make($request->new_password)]);
-        toast(trans('admin.password').' '.trans('admin.changed').' '.trans('admin.successfully'),'success');
+        toast(trans('teacher.password_changed'),'success');
 
         return back();
     }
