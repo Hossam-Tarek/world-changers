@@ -24,9 +24,22 @@
                                 <label for="phones">رقم هاتف المعلم <span class="red">*</span></label>
                                 <i class="fas fa-plus-circle" style="color: #03a9f4"></i>
                             </div>
-                            <input class="form-control" type="text" name="phones[]" id="phones" placeholder="رقم الهاتف" required/>
+                            <input class="form-control" type="text" name="phones[]" value="{{ $teacher->phones->first()->number ?? '' }}" id="phones" placeholder="رقم الهاتف" required/>
                             <div class="invalid-feedback"> هذا الحقل مطلوب</div>
-                            <div id="phone-wrapper" class="phone-wrapper"></div>
+                            <div id="phone-wrapper" class="phone-wrapper">
+                                @foreach($teacher->phones->forget(0) as $phone)
+                                    <div class="row phone-field-wrapper">
+                                        <div class="col-11">
+                                            <input class="form-control" type="text" name="phones[]" value="{{ $phone->number }}" placeholder="رقم الهاتف"/>
+                                        </div>
+                                        <div class="col-1">
+                                            <button id="remove-phone-field" class="add-field remove d-flex align-items-center" type="button">
+                                                <i class="far fa-trash-alt" style="font-size: 1.25rem; margin-bottom:1rem"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
 

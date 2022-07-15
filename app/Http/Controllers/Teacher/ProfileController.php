@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\ChangePasswordRequest;
 use App\Http\Requests\Teacher\UpdateProfileRequest;
 use App\Models\Language;
+use App\Models\Phone;
 use App\Models\Subject;
 use App\Models\Year;
 use App\Traits\FileTrait;
@@ -42,6 +43,13 @@ class ProfileController extends Controller
         if ($request->has('images')) {
             self::deleteFiles($teacher->images());
             self::uploadFiles($request->images, $teacher, 'teachers/');
+        }
+
+        $teacher->phones()->delete();
+        foreach ($request->phones as $value) {
+            $phone = new Phone();
+            $phone->number = $value;
+            $teacher->phones()->save($phone);
         }
 
         $teacher->update($data);
