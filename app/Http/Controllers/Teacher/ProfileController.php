@@ -52,6 +52,11 @@ class ProfileController extends Controller
             $teacher->phones()->save($phone);
         }
 
+        $teacher->sites()->delete();
+        foreach($request->sites as $site){
+            $teacher->sites()->create(['site' => $site]);
+        }
+
         $teacher->update($data);
         $teacher->subjects()->sync($request->subjects);
         $teacher->years()->sync($request->years);

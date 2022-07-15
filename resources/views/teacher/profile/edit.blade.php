@@ -295,11 +295,19 @@
                             </div>
                             <div id="website-fields">
                                 <div class="d-flex justify-content-between field-wrapper">
-                                    <input type="text" name="sites[]" id="site" class="form-control" placeholder="أضف موقعك الإلكتروني">
+                                    <input type="text" name="sites[]" id="site" value="{{ $teacher->sites->first()->site }}" class="form-control" placeholder="أضف موقعك الإلكتروني">
                                     {{-- <button id="btn-remove" class="add-field remove d-flex align-items-center" type="button">
                                         <i class="far fa-trash-alt"></i>
                                     </button> --}}
                                 </div>
+                                @foreach($teacher->sites->forget(0) as $site)
+                                    <div class="d-flex justify-content-between field-wrapper">
+                                        <input type="text" id="site" value="{{ $site->site }}" class="form-control" style="width: 95%" name="sites[]" placeholder="أضف موقعك الإلكتروني"/>
+                                        <button id="btn-remove" class="add-field remove d-flex align-items-center" type="button">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
