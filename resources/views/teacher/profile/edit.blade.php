@@ -10,7 +10,7 @@
                 <h2>تحديث بيانات المعلم</h2>
             </header>
 
-            <form action="{{ route('teacher.register') }}" method="POST" class="needs-validation" action="" enctype="multipart/form-data" novalidate>
+            <form action="{{ route('teacher.profile.update') }}" method="POST" class="needs-validation" action="" enctype="multipart/form-data" novalidate>
                 @csrf
 
                 <div class="row w-100 mx-0 px-0">
@@ -100,7 +100,7 @@
                                         class="custom-file-container__custom-file__custom-file-input"
                                         accept="image/*"
                                         aria-label="Choose File"
-                                        name = "avatar"
+                                        name = "image"
                                     />
                                     <input
                                         type="hidden"
@@ -292,9 +292,6 @@
                     </div>
                 </div>
 
-                <p class="text-danger text-sm" style="font-size: 14px;">
-                    تنويه: ترتيب ظهور المعلمين للطالب يكون بناءا على نشاط المعلم فالمعلم صاحب أكبر عدد من الأسئلة يظهر أولا في المقدمة للطلاب الجدد الذين يشتركون في الموقع. ثم عندما يختار الطالب متابعة معلم معين❤️، فإن أسئلة هذا المعلم هي التي تظهر أولا في المقدمة للطالب.
-                </p>
                 <button type="submit" class="btn w-full">
                     تحديث
                     <img src="{{ asset('assets/images/home/arrow-left.svg') }}" alt="" />
