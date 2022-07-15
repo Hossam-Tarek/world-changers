@@ -83,4 +83,9 @@ class Teacher extends Authenticatable
     {
         return $this->morphMany(File::class, 'fileable');
     }
+
+    public function getImageUrlAttribute()
+    {
+        return !empty($this->attributes['image']) ? asset($this->attributes['image']) : '';
+    }
 }
