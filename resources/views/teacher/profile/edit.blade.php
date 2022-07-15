@@ -1,4 +1,4 @@
-<x-website.layouts.master>
+<x-teacher.layouts.master>
     <x-slot name="styles">
         <livewire:styles/>
     </x-slot>
@@ -334,14 +334,9 @@
                 $("#subjects").selectize({
                     maxItems: null,
                 });
-                var upload = new FileUploadWithPreview("myUniqueUploadId");
-                var anotherUpload = new FileUploadWithPreview(
-                    "myUniqueUploadId3"
-                );
+                var anotherUpload = new FileUploadWithPreview("myUniqueUploadId3");
 
-                var anotherUpload = new FileUploadWithPreview(
-                    "myUniqueUploadId2"
-                );
+                var anotherUpload = new FileUploadWithPreview("myUniqueUploadId2");
 
                 $("#add-field").click(function () {
                     let template = `<div class="d-flex justify-content-between field-wrapper">
@@ -418,4 +413,4 @@
 
         <livewire:scripts/>
     </x-slot>
-</x-website.layouts.master>
+</x-teacher.layouts.master>

@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}" />
     <link
         rel="stylesheet"
+        type="text/css"
+        href="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.css"
+    />
+    <link
+        rel="stylesheet"
         href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
         crossorigin="anonymous"
@@ -37,6 +42,7 @@
             right: auto !important;
         }
     </style>
+
     @if(isset($styles) && $styles->isNotEmpty()) {{ $styles }} @endif
 </head>
 
@@ -62,15 +68,17 @@
 <script src="{{ asset('assets/js/index.js') }}"></script>
 <script src="{{ asset('assets/js/slider.js') }}"></script>
 <script src="{{ asset('assets/js/custom_teacher.js') }}"></script>
+<script src="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.js"></script>
 <script>
-    //count followers
-    var clicks = 0;
+//count followers
+var clicks = 0;
 
-    function onClick() {
-        clicks += 1;
-        document.getElementById("clicks").innerHTML = clicks;
-    }
+function onClick() {
+clicks += 1;
+document.getElementById("clicks").innerHTML = clicks;
+}
 </script>
+
 @if(isset($scripts) && $scripts->isNotEmpty()) {{ $scripts }} @endif
 </body>
 </html>
