@@ -322,7 +322,6 @@
     </section>
 
     <x-slot name="scripts">
-        <script src="{{ asset('assets/js/selectize.min.js') }}"></script>
         <script>
             // Example starter JavaScript for disabling form submissions if there are invalid fields
             (function () {

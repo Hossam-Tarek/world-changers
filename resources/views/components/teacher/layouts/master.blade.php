@@ -42,6 +42,7 @@
             right: auto !important;
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('assets/css/selectize.css') }}" />
 
     @if(isset($styles) && $styles->isNotEmpty()) {{ $styles }} @endif
 </head>
@@ -70,14 +71,15 @@
 <script src="{{ asset('assets/js/custom_teacher.js') }}"></script>
 <script src="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.js"></script>
 <script>
-//count followers
-var clicks = 0;
+    //count followers
+    var clicks = 0;
 
-function onClick() {
-clicks += 1;
-document.getElementById("clicks").innerHTML = clicks;
-}
+    function onClick() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    }
 </script>
+<script src="{{ asset('assets/js/selectize.min.js') }}"></script>
 
 @if(isset($scripts) && $scripts->isNotEmpty()) {{ $scripts }} @endif
 </body>
