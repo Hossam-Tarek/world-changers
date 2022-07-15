@@ -61,11 +61,11 @@ class RegisteredUserController extends Controller
             'school' => 'nullable|string|max:255',
             'brief' => 'nullable|string',
             'youtube' => 'nullable|string',
-            'avatar' => 'required|image|mimes:jpeg,jpg,png,gif|max:4096',
+            'image' => 'required|image|mimes:jpeg,jpg,png,gif|max:4096',
             'images.*' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:4096',
         ]);
         $data['password'] = Hash::make($request->password);
-        $data['image'] = self::uploadFile($request->file('avatar'), 'teachers/');
+        $data['image'] = self::uploadFile($request->file('image'), 'teachers/');
         $teacher = Teacher::create($data);
         foreach ($request->phones as $value) {
             $phone = new Phone();

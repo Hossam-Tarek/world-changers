@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\ChangePasswordRequest;
 use App\Http\Requests\Teacher\UpdateProfileRequest;
 use App\Models\Language;
+use App\Models\Phone;
 use App\Models\Subject;
 use App\Models\Year;
 use App\Traits\FileTrait;
@@ -39,9 +40,28 @@ class ProfileController extends Controller
             self::deleteFile($teacher->image);
             $data['image'] = self::uploadFile($data['image'], 'teachers/');
         }
+        if ($request->has('images')) {
+            self::deleteFiles($teacher->images());
+            self::uploadFiles($request->images, $teacher, 'teachers/');
+        }
+
+        $teacher->phones()->delete();
+        foreach ($request->phones as $value) {
+            $phone = new Phone();
+            $phone->number = $value;
+            $teacher->phones()->save($phone);
+        }
+
+        $teacher->sites()->delete();
+        foreach($request->sites as $site){
+            $teacher->sites()->create(['site' => $site]);
+        }
 
         $teacher->update($data);
-        toast(trans('admin.profile').' '.trans('admin.updated').' '.trans('admin.successfully'),'success');
+        $teacher->subjects()->sync($request->subjects);
+        $teacher->years()->sync($request->years);
+
+        toast(trans('teacher.profile_updated'),'success');
 
         return back();
     }

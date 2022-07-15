@@ -118,7 +118,7 @@
                                         class="custom-file-container__custom-file__custom-file-input"
                                         accept="image/*"
                                         aria-label="Choose File"
-                                        name = "avatar"
+                                        name = "image"
                                     />
                                     <input
                                         type="hidden"

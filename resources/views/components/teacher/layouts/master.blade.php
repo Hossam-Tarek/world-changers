@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}" />
     <link
         rel="stylesheet"
+        type="text/css"
+        href="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.css"
+    />
+    <link
+        rel="stylesheet"
         href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
         crossorigin="anonymous"
@@ -37,6 +42,8 @@
             right: auto !important;
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('assets/css/selectize.css') }}" />
+
     @if(isset($styles) && $styles->isNotEmpty()) {{ $styles }} @endif
 </head>
 
@@ -49,7 +56,10 @@
 <x-teacher.includes.sidebar/>
 <!-- End Sidebar -->
 
+@include('sweetalert::alert')
+
 {{ $slot }}
+
 
 <!-- scripts -->
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
@@ -59,6 +69,7 @@
 <script src="{{ asset('assets/js/index.js') }}"></script>
 <script src="{{ asset('assets/js/slider.js') }}"></script>
 <script src="{{ asset('assets/js/custom_teacher.js') }}"></script>
+<script src="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.js"></script>
 <script>
     //count followers
     var clicks = 0;
@@ -68,6 +79,8 @@
         document.getElementById("clicks").innerHTML = clicks;
     }
 </script>
+<script src="{{ asset('assets/js/selectize.min.js') }}"></script>
+
 @if(isset($scripts) && $scripts->isNotEmpty()) {{ $scripts }} @endif
 </body>
 </html>
