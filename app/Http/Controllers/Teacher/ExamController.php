@@ -12,9 +12,6 @@ class ExamController extends Controller
 {
     public function create()
     {
-        return view('teacher.exams.create', [
-            'languages' => Language::all(),
-            'subjects' => Subject::all(),
-        ]);
+        return view('teacher.exams.create');
     }
 }

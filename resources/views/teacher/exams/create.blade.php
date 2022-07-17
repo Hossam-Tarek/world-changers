@@ -1,6 +1,7 @@
 <x-teacher.layouts.master>
     <x-slot name="styles">
         <link rel="stylesheet" class="selectedLangDir" />
+        <livewire:styles/>
     </x-slot>
 
 
@@ -12,99 +13,8 @@
                     <h2>إنشاء امتحان جديد</h2>
                 </header>
                 <div class="questions">
-                    <div class="row w-100 mx-0 px-0" >
-                        <div class="col-md-4 mb-3">
-                            <div class="question__field">
-                                <label class="mb-2" for="language">
-                                    التدريس باللغة <span class="red">*</span>
-                                </label>
-                                <select name="" id="language" class="form-control">
-                                    @foreach($languages as $language)
-                                        <option value="{{ $language->id }}">{{ $language->local_name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="question__field">
-                                <label class="mb-2" for="unit">
-                                    المادة الدراسية<span class="red">*</span>
-                                </label>
-                                <select name="subject_id" id="subject_id" class="form-control">
-                                    @foreach($subjects as $subject)
-                                        <option value="{{ $subject->id }}">{{ $subject->year->name.' - '.$subject->name_ar }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="question__field exam-units">
-                                <label class="mb-2" for="unit">
-                                    اختر الوحدة
-                                    <span class="red">*</span>
-                                </label>
-                                <select
-                                    name=""
-                                    id="unit"
-                                    style="height: 38px;"
-                                    class="form-control  p-0"
-                                >
-                                    <option value=""></option>
-                                    <option value="first">
-                                        الوحدة الأولي
-                                    </option>
-                                    <option value="second">
-                                        الوحدة الثانية
-                                    </option>
-                                    <option value="third">
-                                        الوحدة الثالثة
-                                    </option>
-                                    <option value="exam-op">
-                                        امتحانات عامة
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3 lesson-units">
-                            <div class="question__field">
-                                <label class="mb-2" for="lesson">
-                                    اختر الدرس
-                                    <span class="red">*</span>
-                                </label>
-                                <select
-                                    name=""
-                                    id="lesson"
-                                    style="height: 38px;"
-                                    class="form-control  p-0"
-                                >
-                                    <option value=""></option>
-                                    <option value="first">
-                                        الأولي
-                                    </option>
-                                    <option value="second">
-                                        الثانية
-                                    </option>
-                                    <option value="third">
-                                        الثالثة
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3 exam-title d-none">
-                            <div class="question__field">
-                                <label class="mb-2" for="subject">
-                                    عنوان محتوي الأمتحان
-                                    <span class="red">*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="subject"
-                                    placeholder="أكتب عنوان الأمتحان"
-                                />
-                            </div>
-                        </div>
-                    </div>
+                    <livewire:teacher.make-exam-select class="row w-100 mx-0 px-0"/>
+
                     <hr class="mt-4 mb-3" />
                     <!-- start main question -->
                     <div class="questions__main row">
@@ -1253,5 +1163,7 @@
                 );
             });
         </script>
+
+        <livewire:scripts/>
     </x-slot>
 </x-teacher.layouts.master>
