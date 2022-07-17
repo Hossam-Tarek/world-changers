@@ -21,8 +21,8 @@
                 <span class="title">الطلاب الذين يتابعونني</span>
             </a>
         </li>
-        <li class="item">
-            <a href="">
+        <li class="item {{ \Illuminate\Support\Facades\Route::is('teacher.profile.edit') ? 'active' : '' }}">
+            <a href="{{ route('teacher.profile.edit') }}">
                 <i class="fas fa-cog icon"></i>
                 <span class="title">الإعدادات</span>
             </a>

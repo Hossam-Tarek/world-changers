@@ -3,7 +3,7 @@
         <div class="container">
             <header class="main-header">
                 <span></span>
-                <h2>تغيير الرقم السري</h2>
+                <h2>تغيير كلمة المرور</h2>
             </header>
 
             <form action="{{ route('teacher.password.change') }}" method="POST" class="needs-validation" novalidate>
@@ -24,7 +24,7 @@
                             تأكيد كلمة المرور<span class="red">*</span>
                         </x-form.input>
                         <button type="submit" class="btn w-full">
-                            تغيير الرقم السري
+                            تغيير كلمة المرور
                             <img src="{{ asset('assets/images/home/arrow-left.svg') }}" alt="" />
                         </button>
                     </div>
