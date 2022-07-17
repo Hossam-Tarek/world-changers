@@ -56,6 +56,7 @@ return [
     'reset_password' => 'Reset password',
     'forget_desc' => 'Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.',
 
-    "profile_updated" => "Profile updated successfully"
+    "profile_updated" => "Profile updated successfully",
+    "password_changed" => "Password changed successfully",
 ];
 
