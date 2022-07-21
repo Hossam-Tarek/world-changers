@@ -1,6 +1,6 @@
 $(function() {
     $(document).on('change','#language', function() {
-        if($(this).val() != 'first') {
+        if($(this).val() != 1/* 1 is the id of the arabic language*/) {
             // $('.selectedLangDir').attr('href', 'assets/css/RTLExam.css')
             // $('.selectedLangDirBootstrap').attr('href', 'assets/css/bootstrap.min.css')
             $('.selectedLangDirRTL').attr('href', '')
@@ -13,13 +13,13 @@ $(function() {
             $('textarea').removeClass('text-end')
 
             // $('.selectedLangDirRTL').attr('href', 'assets/css/bootstrap.rtl.min.css')
-            
+
         }
     })
     // when select units
     $("body").on('DOMSubtreeModified', ".exam-units", function() {
        $('.exam-units .selectize-input .item').each(function() {
-            
+
        })
     });
     $(document).on('change','.exam-units select', function() {

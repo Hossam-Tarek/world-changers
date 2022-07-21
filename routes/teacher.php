@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Teacher;
 
+use App\Http\Livewire\Teacher\MakeExam;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +25,13 @@ Route::middleware('isTeacher')->group(function () {
         Route::get('/edit', [ProfileController::class, 'edit'])->name('edit');
         Route::post('/', [ProfileController::class, 'update'])->name('update');
     });
+
     Route::get('/change-password', [ProfileController::class, 'changePasswordView'])->name('password.change');
     Route::post('/change-password', [ProfileController::class, 'changePassword']);
+
+    Route::group(['prefix' => 'exams', 'as' => 'exams.'], function () {
+        Route::get('/create', [ExamController::class, 'create'])->name('create');
+    });
 });
 
 require __DIR__.'/teacher-auth.php';

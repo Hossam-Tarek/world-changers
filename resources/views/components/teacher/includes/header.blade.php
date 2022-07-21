@@ -38,11 +38,7 @@
                     >
                         <figure>
                             <a href="./teacher-profile.html" style="cursor: pointer">
-                                <img
-                                    class="teacher-image"
-                                    src="/assets/images/person.jpg"
-                                    alt="teacher-figure"
-                                />
+                                <img class="teacher-image" src="{{ empty(auth('teacher')->user()->image_url) ? asset('assets/images/person.jpg') : asset(auth('teacher')->user()->image_url) }}" alt="teacher-figure"/>
                             </a>
                         </figure>
                     </button>

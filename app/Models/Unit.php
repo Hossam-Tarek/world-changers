@@ -11,7 +11,9 @@ class Unit extends Model
 
     protected $fillable = [
         'subject_id',
-        'name',
+        'name_ar',
+        'name_en',
+        'name_fr',
         'order',
     ];
 

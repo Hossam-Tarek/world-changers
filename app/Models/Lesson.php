@@ -11,7 +11,9 @@ class Lesson extends Model
 
     protected $fillable = [
         'unit_id',
-        'name',
+        'name_ar',
+        'name_en',
+        'name_fr',
         'order',
     ];
 
