@@ -33,7 +33,12 @@ Route::middleware('isAdmin')->group(function () {
     Route::post('/admins/{admin}/password', [AdminController::class, 'changePassword'])->name('admins.password')->middleware('role_or_permission:super-admin|admins,admin');
 
     Route::get('/subjects/template', [SubjectController::class, 'downloadTemplate'])->name('subjects.template')->middleware('role_or_permission:super-admin|subjects,admin');
-    Route::post('/appLabels/import', [SubjectController::class, 'import'])->name('subjects.import')->middleware('role_or_permission:super-admin|subjects,admin');
+    Route::post('/subjects/import', [SubjectController::class, 'import'])->name('subjects.import')->middleware('role_or_permission:super-admin|subjects,admin');
     Route::resource('/subjects', SubjectController::class)->except(['show', 'destroy'])->middleware('role_or_permission:super-admin|subjects,admin');
+
     Route::resource('/pages', PageController::class)->only(['index', 'edit', 'update'])->middleware('role_or_permission:super-admin|pages,admin');
+
+    Route::get('/units/template', [UnitController::class, 'downloadTemplate'])->name('units.template')->middleware('role_or_permission:super-admin|units,admin');
+    Route::post('/units/import', [UnitController::class, 'import'])->name('units.import')->middleware('role_or_permission:super-admin|units,admin');
+    Route::resource('/units', UnitController::class)->except(['show', 'destroy'])->middleware('role_or_permission:super-admin|units,admin');
 });

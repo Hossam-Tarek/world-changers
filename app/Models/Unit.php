@@ -14,11 +14,21 @@ class Unit extends Model
         'name_ar',
         'name_en',
         'name_fr',
-        'order',
     ];
 
     public function exams()
     {
         return $this->morphMany(Exam::class, 'examable');
     }
+
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
+
+//    public function year()
+//    {
+//        dd('sfsd');
+//        return $this->hasOneDeep(Year::class, Subject::class);
+//    }
 }
