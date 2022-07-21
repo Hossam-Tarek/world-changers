@@ -23,7 +23,6 @@ class CreateUnitsTable extends Migration
             $table->string('name_ar');
             $table->string('name_en');
             $table->string('name_fr');
-            $table->smallInteger('order')->nullable();
             $table->timestamps();
         });
     }
