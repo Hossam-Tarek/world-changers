@@ -72,7 +72,7 @@ return [
     'new_subject_added' => 'New subject added successfully',
     'new_subject_updated' => 'Subject updated successfully',
     'new_unit_added' => 'New Unit added successfully',
-    'new_unit_updated' => 'Unit updated successfully',
+    'unit_updated' => 'Unit updated successfully',
 
     'import_failed' => 'Import data failed.',
     'template' => 'Template',
