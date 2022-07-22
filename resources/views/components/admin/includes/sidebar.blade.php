@@ -146,6 +146,32 @@
                     </li>
                 @endif
 
+                @if(auth('admin')->user()->hasRole('super-admin') || auth('admin')->user()->can('lessons'))
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-book-open mr-2"></i>
+                            <p>
+                                {{ __('admin.lessons') }}
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.lessons.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>{{ __('admin.lessons') }}</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.lessons.create') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>{{ __('admin.add') .' '. __('admin.lesson') }}</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+
                 @if(auth('admin')->user()->hasRole('super-admin') || auth('admin')->user()->can('pages'))
                     <li class="nav-item">
                         <a href="{{ route('admin.pages.index') }}" class="nav-link">

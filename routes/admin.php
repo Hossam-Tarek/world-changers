@@ -41,4 +41,8 @@ Route::middleware('isAdmin')->group(function () {
     Route::get('/units/template', [UnitController::class, 'downloadTemplate'])->name('units.template')->middleware('role_or_permission:super-admin|units,admin');
     Route::post('/units/import', [UnitController::class, 'import'])->name('units.import')->middleware('role_or_permission:super-admin|units,admin');
     Route::resource('/units', UnitController::class)->except(['show', 'destroy'])->middleware('role_or_permission:super-admin|units,admin');
+
+    Route::get('/lessons/template', [LessonController::class, 'downloadTemplate'])->name('lessons.template')->middleware('role_or_permission:super-admin|lessons,admin');
+    Route::post('/lessons/import', [LessonController::class, 'import'])->name('lessons.import')->middleware('role_or_permission:super-admin|lessons,admin');
+    Route::resource('/lessons', LessonController::class)->except(['show', 'destroy'])->middleware('role_or_permission:super-admin|lessons,admin');
 });

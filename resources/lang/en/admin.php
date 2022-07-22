@@ -45,6 +45,8 @@ return [
     'subjects' => 'Subjects',
     'unit' => 'Unit',
     'units' => 'Units',
+    'lesson' => 'Lesson',
+    'lessons' => 'Lessons',
     'semester' => 'Semester',
     'page' => 'Page',
     'pages' => 'Pages',
@@ -73,6 +75,8 @@ return [
     'new_subject_updated' => 'Subject updated successfully',
     'new_unit_added' => 'New Unit added successfully',
     'unit_updated' => 'Unit updated successfully',
+    'new_lesson_added' => 'New Lesson added successfully',
+    'lesson_updated' => 'Lesson updated successfully',
 
     'import_failed' => 'Import data failed.',
     'template' => 'Template',
