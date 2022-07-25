@@ -4,7 +4,7 @@
 <div class="navigation" >
     <ul>
         <li class="item">
-            <a href="">
+            <a href="{{ route('teacher.home') }}">
                 <i class="fas fa-home icon"></i>
                 <span class="title">صفحتي الرئيسية</span>
             </a>
