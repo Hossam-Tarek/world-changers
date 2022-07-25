@@ -94,12 +94,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="teacher-profile-right border-0 teacher-profile-right2" style="
-                height: auto;
-                background-color: transparent;
-                border: 0 !important;
-                box-shadow: none !important;
-              ">
+                    <div class="teacher-profile-right border-0 teacher-profile-right2" style="height: auto;background-color: transparent;border: 0 !important;box-shadow: none !important;">
                         <div class="subject-overview__teacher text-center">
                             <div class="teacher d-block">
                                 <div>
@@ -293,22 +288,10 @@
                                                                         <div>
                                                                             <div class="d-flex align-items-center justify-content-between">
                                                                                 <div class="f-10 d-flex text-white" style="width: 250px; height: 16px; border-radius: 3px; overflow: hidden; ">
-                                                                                    <div class="text-center h-100" style="
-                                                background-color: rgb(
-                                                  57,
-                                                  179,
-                                                  57
-                                                );
-                                                width: 50%;
-                                              ">
+                                                                                    <div class="text-center h-100" style="background-color: rgb(  57,  179,  57);width: 50%;">
                                                                                         50%
                                                                                     </div>
-                                                                                    <div class="text-center h-100" style="
-                                                background-color: rgb(
-                                                  255 88 88
-                                                );
-                                                width: 50%;
-                                              ">
+                                                                                    <div class="text-center h-100" style="background-color: rgb(  255 88 88);width: 50%;">
                                                                                         50%
                                                                                     </div>
                                                                                 </div>
@@ -322,10 +305,7 @@
                                                                                     </button>
                                                                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                                         <div class="modal-dialog modal-dialog-centered" style="max-width: 1000px;">
-                                                                                            <div class="modal-content" style="
-                                                    margin: auto;
-                                                    padding: 9px;
-                                                  ">
+                                                                                            <div class="modal-content" style="margin: auto;padding: 9px;">
                                                                                                 <div class="modal-header pb-0 d-block">
                                                                                                     <button style="position: absolute;top: 12px;left: 12px;background-color: #ffc1c7cc;background-image: none;color: #000;opacity: 1;display: inline-flex;align-items: center;justify-content: center;"
                                                                                                         type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
@@ -383,466 +363,63 @@
 
 
                                                                                     <span>
-                                              <div class="dropdown">
-                                                <button
-                                                    class="px-0 btn dropdown-toggle"
-                                                    type="button"
-                                                    id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
-                                                >
-                                                  <i
-                                                      class="fas fa-ellipsis-v text-dark"
-                                                  ></i>
-                                                </button>
-                                                <ul
-                                                    class="dd-ff dropdown-menu"
-                                                    aria-labelledby="dropdownMenuButton1"
-                                                >
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                    >تعديل</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50"
-                                                    >حذف</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50-han"
-                                                    >الموافقة على نشر الاختبار</a
-                                                    >
-                                                  </li>
-                                                </ul>
-                                                <div
-                                                    class="modal fade"
-                                                    id="exampleModa50"
-                                                    tabindex="-1"
-                                                    aria-labelledby="exampleModalLabel"
-                                                    aria-hidden="true"
-                                                >
-                                                  <div
-                                                      class="modal-dialog modal-dialog-centered"
-                                                      style="max-width: 350px;"
+                                                                                        <div class="dropdown">
+                                                                                        <button class="px-0 btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                                          <i class="fas fa-ellipsis-v text-dark"></i>
+                                                                                        </button>
+                                                                                        <ul class="dd-ff dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                                          <li>
+                                                                                            <a class="dropdown-item" href="#">تعديل</a>
+                                                                                          </li>
+                                                                                          <li>
+                                                                                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModa50">حذف</a>
+                                                                                          </li>
+                                                                                          <li>
+                                                                                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModa50-han">الموافقة على نشر الاختبار</a>
+                                                                                          </li>
+                                                                                        </ul>
+                                                                                        <div class="modal fade" id="exampleModa50" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                                          <div class="modal-dialog modal-dialog-centered" style="max-width: 350px;">
+                                                                                            <div class="modal-content" style="
 
-                                                  >
-                                                    <div
-                                                        class="modal-content"
-                                                        style="
+                                                                                                margin: auto;
+                                                                                                padding: 9px;
+                                                                                              ">
 
-                                                        margin: auto;
-                                                        padding: 9px;
-                                                      "
-                                                    >
+                                                                                              <div class="modal-header pb-2 pt-2">
+                                                                                                <h4 class="text-center w-100 fw-bold" id="exampleModalLabel">
+                                                                                                  حذف الإختبار
+                                                                                                </h4>
+                                                                                              </div>
+                                                                                              <div>
+                                                                                                <input type="checkbox">
+                                                                                                <label for="">نعم، أريد أن أحذف هذا الاختبار</label>
+                                                                                              </div>
+                                                                                              <div class="modal-footer text-center justify-content-center">
+                                                                                                <button type="button" style="background-color: #dc3545;" data-bs-dismiss="modal" class="btn btn-sm btn-danger delete_question custom-file-container__image-clear">
+                                                                                                  نعم
+                                                                                                </button>
+                                                                                                <button type="button" class="btn btn-sm btn-success custom-file-container__image-clear" data-bs-dismiss="modal">
+                                                                                                  لا
+                                                                                                </button>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                        <div class="modal fade" id="exampleModa50-han" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                                          <div class="modal-dialog modal-dialog-centered" style="max-width: 400px;">
+                                                                                            <div class="modal-content" style="
 
-                                                      <div
-                                                          class="modal-header pb-2 pt-2"
-                                                      >
+                                                                                                margin: auto;
+                                                                                                padding: 9px;
+                                                                                              ">
 
-                                                        <h4
-                                                            class="text-center w-100 fw-bold"
-                                                            id="exampleModalLabel"
-                                                        >
-
-                                                          حذف الإختبار
-                                                        </h4>
-
-                                                      </div>
-                                                      <div>
-                                                        <input type="checkbox">
-                                                        <label for="">نعم، أريد أن أحذف هذا الاختبار</label>
-                                                      </div>
-                                                      <div
-                                                          class="modal-footer text-center justify-content-center"
-                                                      >
-                                                        <button
-                                                            type="button"
-                                                            style="
-                                                            background-color: #dc3545;
-                                                          "
-                                                            data-bs-dismiss="modal"
-                                                            class="btn btn-sm btn-danger delete_question custom-file-container__image-clear"
-                                                        >
-                                                          نعم
-                                                        </button>
-                                                        <button
-                                                            type="button"
-                                                            class="btn btn-sm btn-success custom-file-container__image-clear"
-                                                            data-bs-dismiss="modal"
-                                                        >
-                                                          لا
-                                                        </button>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div
-                                                    class="modal fade"
-                                                    id="exampleModa50-han"
-                                                    tabindex="-1"
-                                                    aria-labelledby="exampleModalLabel"
-                                                    aria-hidden="true"
-                                                >
-                                                  <div
-                                                      class="modal-dialog modal-dialog-centered"
-                                                      style="max-width: 400px;"
-
-                                                  >
-                                                    <div
-                                                        class="modal-content"
-                                                        style="
-
-                                                        margin: auto;
-                                                        padding: 9px;
-                                                      "
-                                                    >
-
-                                                     <h5 class="text-success text-center p-5 fw-bold"> تمت الموافقة على نشر الإختبار</h5>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li class="mb-2">
-                                                                        <span>الاختبار الأول</span>
-                                                                        <div>
-                                                                            <div
-                                                                                class="d-flex align-items-center justify-content-between"
-                                                                            >
-                                                                                <div
-                                                                                    class="f-10 d-flex text-white"
-                                                                                    style="
-                                              width: 250px;
-                                              height: 16px;
-                                              border-radius: 3px;
-                                              overflow: hidden;
-                                            "
-                                                                                >
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  57,
-                                                  179,
-                                                  57
-                                                );
-                                                width: 80%;
-                                              "
-                                                                                    >
-                                                                                        80%
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  255 88 88
-                                                );
-                                                width: 20%;
-                                              "
-                                                                                    >
-                                                                                        20%
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="d-flex">
-                                                                                    <!-- <span class="fw-bold py-2 me-2" style="color: rgb(12 185 0);">
-                                                                                    أجاب عليه 50  طالب
-                                                                                    </span> -->
-
-                                                                                    <button
-                                                                                        type="button"
-                                                                                        class="reset-btn"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#exampleModal"
-                                                                                        style="color: rgb(12 185 0);"
-                                                                                    >
-                                                                                        أجاب عنه 50 طالب
-                                                                                    </button>
-
-
-
-                                                                                    <span>
-                                              <div class="dropdown">
-                                                <button
-                                                    class="px-0 btn dropdown-toggle"
-                                                    type="button"
-                                                    id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
-                                                >
-                                                  <i
-                                                      class="fas fa-ellipsis-v text-dark"
-                                                  ></i>
-                                                </button>
-                                                <ul
-                                                    class="dd-ff dropdown-menu"
-                                                    aria-labelledby="dropdownMenuButton1"
-                                                >
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                    >تعديل</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50"
-                                                    >حذف</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50-han"
-                                                    >الموافقة على نشر الاختبار</a
-                                                    >
-                                                  </li>
-                                                </ul>
-
-
-                                              </div>
-                                            </span>
-                                                                                </div>
-
-                                                                            </div>
-                                                                    </li>
-                                                                    <li class="mb-2">
-                                                                        <span>الاختبار الأول</span>
-                                                                        <div>
-                                                                            <div
-                                                                                class="d-flex align-items-center justify-content-between"
-                                                                            >
-                                                                                <div
-                                                                                    class="f-10 d-flex text-white"
-                                                                                    style="
-                                              width: 250px;
-                                              height: 16px;
-                                              border-radius: 3px;
-                                              overflow: hidden;
-                                            "
-                                                                                >
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  57,
-                                                  179,
-                                                  57
-                                                );
-                                                width: 80%;
-                                              "
-                                                                                    >
-                                                                                        80%
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  255 88 88
-                                                );
-                                                width: 20%;
-                                              "
-                                                                                    >
-                                                                                        20%
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="d-flex">
-                                                                                    <!-- <span class="fw-bold py-2 me-2" style="color: rgb(12 185 0);">
-                                                                                    أجاب عليه 50  طالب
-                                                                                  </span> -->
-
-                                                                                    <button
-                                                                                        type="button"
-                                                                                        class="reset-btn"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#exampleModal"
-                                                                                        style="color: rgb(12 185 0);"
-                                                                                    >
-                                                                                        أجاب عنه 50 طالب
-                                                                                    </button>
-                                                                                    <div
-                                                                                        class="modal fade ddd"
-                                                                                        id="exampleModal"
-                                                                                        tabindex="-1"
-                                                                                        aria-labelledby="exampleModalLabel"
-                                                                                        aria-hidden="true"
-                                                                                    >
-
-                                                                                    </div>
-
-
-                                                                                    <span>
-                                              <div class="dropdown">
-                                                <button
-                                                    class="px-0 btn dropdown-toggle"
-                                                    type="button"
-                                                    id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
-                                                >
-                                                  <i
-                                                      class="fas fa-ellipsis-v text-dark"
-                                                  ></i>
-                                                </button>
-                                                <ul
-                                                    class="dd-ff dropdown-menu"
-                                                    aria-labelledby="dropdownMenuButton1"
-                                                >
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                    >تعديل</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50"
-                                                    >حذف</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50-han"
-                                                    >الموافقة على نشر الاختبار</a
-                                                    >
-                                                  </li>
-                                                </ul>
-
-                                              </div>
-                                            </span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li class="mb-2">
-                                                                        <span>الاختبار الأول</span>
-                                                                        <div>
-                                                                            <div
-                                                                                class="d-flex align-items-center justify-content-between"
-                                                                            >
-                                                                                <div
-                                                                                    class="f-10 d-flex text-white"
-                                                                                    style="
-                                              width: 250px;
-                                              height: 16px;
-                                              border-radius: 3px;
-                                              overflow: hidden;
-                                            "
-                                                                                >
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  57,
-                                                  179,
-                                                  57
-                                                );
-                                                width: 80%;
-                                              "
-                                                                                    >
-                                                                                        80%
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  255 88 88
-                                                );
-                                                width: 20%;
-                                              "
-                                                                                    >
-                                                                                        20%
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="d-flex">
-                                                                                    <!-- <span class="fw-bold py-2 me-2" style="color: rgb(12 185 0);">
-                                                                                    أجاب عليه 50  طالب
-                                                                                  </span> -->
-
-                                                                                    <button
-                                                                                        type="button"
-                                                                                        class="reset-btn"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#exampleModal"
-                                                                                        style="color: rgb(12 185 0);"
-                                                                                    >
-                                                                                        أجاب عنه 50 طالب
-                                                                                    </button>
-
-
-                                                                                    <span>
-                                              <div class="dropdown">
-                                                <button
-                                                    class="px-0 btn dropdown-toggle"
-                                                    type="button"
-                                                    id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
-                                                >
-                                                  <i
-                                                      class="fas fa-ellipsis-v text-dark"
-                                                  ></i>
-                                                </button>
-                                                <ul
-                                                    class="dd-ff dropdown-menu"
-                                                    aria-labelledby="dropdownMenuButton1"
-                                                >
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                    >تعديل</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50"
-                                                    >حذف</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50-han"
-                                                    >الموافقة على نشر الاختبار</a
-                                                    >
-                                                  </li>
-                                                </ul>
-
-                                              </div>
-                                            </span>
+                                                                                             <h5 class="text-success text-center p-5 fw-bold"> تمت الموافقة على نشر الإختبار</h5>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    </span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -853,447 +430,50 @@
                                                     </div>
                                                     <div class="accordion-item">
                                                         <h2 class="accordion-header" id="headingTwo">
-                                                            <button
-                                                                class="accordion-button collapsed"
-                                                                type="button"
-                                                                data-bs-toggle="collapse"
-                                                                data-bs-target="#collapseTwo"
-                                                                aria-expanded="false"
-                                                                aria-controls="collapseTwo"
-                                                            >
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                                 الوحدة الثانية
                                                             </button>
                                                         </h2>
-                                                        <div
-                                                            id="collapseTwo"
-                                                            class="accordion-collapse collapse"
-                                                            aria-labelledby="headingTwo"
-                                                            data-bs-parent="#accordionExample"
-                                                        >
+                                                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                                             <div class="accordion-body">
                                                                 <ul>
                                                                     <li class="mb-2">
                                                                         <span>الاختبار الأول</span>
                                                                         <div>
-                                                                            <div
-                                                                                class="d-flex align-items-center justify-content-between"
-                                                                            >
-                                                                                <div
-                                                                                    class="f-10 d-flex text-white"
-                                                                                    style="
-                                              width: 250px;
-                                              height: 16px;
-                                              border-radius: 3px;
-                                              overflow: hidden;
-                                            "
-                                                                                >
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  57,
-                                                  179,
-                                                  57
-                                                );
-                                                width: 80%;
-                                              "
-                                                                                    >
+                                                                            <div class="d-flex align-items-center justify-content-between">
+                                                                                <div class="f-10 d-flex text-white" style="width: 250px;height: 16px;border-radius: 3px;overflow: hidden;">
+                                                                                    <div class="text-center h-100" style="background-color: rgb(  57,  179,  57);width: 80%;">
                                                                                         80%
                                                                                     </div>
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  255 88 88
-                                                );
-                                                width: 20%;
-                                              "
-                                                                                    >
+                                                                                    <div class="text-center h-100" style="background-color: rgb(  255 88 88);width: 20%;">
                                                                                         20%
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="d-flex">
 
-
-                                                                                    <button
-                                                                                        type="button"
-                                                                                        class="reset-btn"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#exampleModal"
-                                                                                        style="color: rgb(12 185 0);"
-                                                                                    >
+                                                                                    <button type="button" class="reset-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: rgb(12 185 0);">
                                                                                         أجاب عنه 50 طالب
                                                                                     </button>
 
-
-
                                                                                     <span>
-                                              <div class="dropdown">
-                                                <button
-                                                    class="px-0 btn dropdown-toggle"
-                                                    type="button"
-                                                    id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
-                                                >
-                                                  <i
-                                                      class="fas fa-ellipsis-v text-dark"
-                                                  ></i>
-                                                </button>
-                                                <ul
-                                                    class="dd-ff dropdown-menu"
-                                                    aria-labelledby="dropdownMenuButton1"
-                                                >
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                    >تعديل</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50"
-                                                    >حذف</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50-han"
-                                                    >الموافقة على نشر الاختبار</a
-                                                    >
-                                                  </li>
-                                                </ul>
+                                                                                        <div class="dropdown">
+                                                                                            <button class="px-0 btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                                              <i class="fas fa-ellipsis-v text-dark"></i>
+                                                                                            </button>
+                                                                                            <ul class="dd-ff dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                                              <li>
+                                                                                                <a class="dropdown-item" href="#">تعديل</a>
+                                                                                              </li>
+                                                                                              <li>
+                                                                                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModa50">حذف</a>
+                                                                                              </li>
+                                                                                              <li>
+                                                                                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModa50-han">الموافقة على نشر الاختبار</a>
+                                                                                              </li>
+                                                                                            </ul>
 
-                                              </div>
-                                            </span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li class="mb-2">
-                                                                        <span>الاختبار الأول</span>
-                                                                        <div>
-                                                                            <div
-                                                                                class="d-flex align-items-center justify-content-between"
-                                                                            >
-                                                                                <div
-                                                                                    class="f-10 d-flex text-white"
-                                                                                    style="
-                                              width: 250px;
-                                              height: 16px;
-                                              border-radius: 3px;
-                                              overflow: hidden;
-                                            "
-                                                                                >
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  57,
-                                                  179,
-                                                  57
-                                                );
-                                                width: 80%;
-                                              "
-                                                                                    >
-                                                                                        80%
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  255 88 88
-                                                );
-                                                width: 20%;
-                                              "
-                                                                                    >
-                                                                                        20%
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="d-flex">
-                                                                                    <!-- <span class="fw-bold py-2 me-2" style="color: rgb(12 185 0);">
-                                                                                    أجاب عليه 50  طالب
-                                                                                  </span> -->
-
-                                                                                    <button
-                                                                                        type="button"
-                                                                                        class="reset-btn"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#exampleModal"
-                                                                                        style="color: rgb(12 185 0);"
-                                                                                    >
-                                                                                        أجاب عنه 50 طالب
-                                                                                    </button>
-
-
-
-                                                                                    <span>
-                                              <div class="dropdown">
-                                                <button
-                                                    class="px-0 btn dropdown-toggle"
-                                                    type="button"
-                                                    id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
-                                                >
-                                                  <i
-                                                      class="fas fa-ellipsis-v text-dark"
-                                                  ></i>
-                                                </button>
-                                                <ul
-                                                    class="dd-ff dropdown-menu"
-                                                    aria-labelledby="dropdownMenuButton1"
-                                                >
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                    >تعديل</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50"
-                                                    >حذف</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50-han"
-                                                    >الموافقة على نشر الاختبار</a
-                                                    >
-                                                  </li>
-                                                </ul>
-
-                                              </div>
-                                            </span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li class="mb-2">
-                                                                        <span>الاختبار الأول</span>
-                                                                        <div>
-                                                                            <div
-                                                                                class="d-flex align-items-center justify-content-between"
-                                                                            >
-                                                                                <div
-                                                                                    class="f-10 d-flex text-white"
-                                                                                    style="
-                                              width: 250px;
-                                              height: 16px;
-                                              border-radius: 3px;
-                                              overflow: hidden;
-                                            "
-                                                                                >
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  57,
-                                                  179,
-                                                  57
-                                                );
-                                                width: 80%;
-                                              "
-                                                                                    >
-                                                                                        80%
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  255 88 88
-                                                );
-                                                width: 20%;
-                                              "
-                                                                                    >
-                                                                                        20%
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="d-flex">
-                                                                                    <!-- <span class="fw-bold py-2 me-2" style="color: rgb(12 185 0);">
-                                                                                    أجاب عليه 50  طالب
-                                                                                  </span> -->
-
-                                                                                    <button
-                                                                                        type="button"
-                                                                                        class="reset-btn"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#exampleModal"
-                                                                                        style="color: rgb(12 185 0);"
-                                                                                    >
-                                                                                        أجاب عنه 50 طالب
-                                                                                    </button>
-
-
-
-                                                                                    <span>
-                                              <div class="dropdown">
-                                                <button
-                                                    class="px-0 btn dropdown-toggle"
-                                                    type="button"
-                                                    id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
-                                                >
-                                                  <i
-                                                      class="fas fa-ellipsis-v text-dark"
-                                                  ></i>
-                                                </button>
-                                                <ul
-                                                    class="dd-ff dropdown-menu"
-                                                    aria-labelledby="dropdownMenuButton1"
-                                                >
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                    >تعديل</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50"
-                                                    >حذف</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50-han"
-                                                    >الموافقة على نشر الاختبار</a
-                                                    >
-                                                  </li>
-                                                </ul>
-
-                                              </div>
-                                            </span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li class="mb-2">
-                                                                        <span>الاختبار الأول</span>
-                                                                        <div>
-                                                                            <div
-                                                                                class="d-flex align-items-center justify-content-between"
-                                                                            >
-                                                                                <div
-                                                                                    class="f-10 d-flex text-white"
-                                                                                    style="
-                                              width: 250px;
-                                              height: 16px;
-                                              border-radius: 3px;
-                                              overflow: hidden;
-                                            "
-                                                                                >
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  57,
-                                                  179,
-                                                  57
-                                                );
-                                                width: 80%;
-                                              "
-                                                                                    >
-                                                                                        80%
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  255 88 88
-                                                );
-                                                width: 20%;
-                                              "
-                                                                                    >
-                                                                                        20%
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="d-flex">
-                                                                                    <!-- <span class="fw-bold py-2 me-2" style="color: rgb(12 185 0);">
-                                                                                    أجاب عليه 50  طالب
-                                                                                  </span> -->
-
-                                                                                    <button
-                                                                                        type="button"
-                                                                                        class="reset-btn"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#exampleModal"
-                                                                                        style="color: rgb(12 185 0);"
-                                                                                    >
-                                                                                        أجاب عنه 50 طالب
-                                                                                    </button>
-
-
-
-                                                                                    <span>
-                                              <div class="dropdown">
-                                                <button
-                                                    class="px-0 btn dropdown-toggle"
-                                                    type="button"
-                                                    id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
-                                                >
-                                                  <i
-                                                      class="fas fa-ellipsis-v text-dark"
-                                                  ></i>
-                                                </button>
-                                                <ul
-                                                    class="dd-ff dropdown-menu"
-                                                    aria-labelledby="dropdownMenuButton1"
-                                                >
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                    >تعديل</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50"
-                                                    >حذف</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50-han"
-                                                    >الموافقة على نشر الاختبار</a
-                                                    >
-                                                  </li>
-                                                </ul>
-
-                                              </div>
-                                            </span>
+                                                                                        </div>
+                                                                                    </span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1315,28 +495,11 @@
                                                                         <span>الاختبار الأول</span>
                                                                         <div>
                                                                             <div class="d-flex align-items-center justify-content-between">
-                                                                                <div class="f-10 d-flex text-white" style="
-                                              width: 250px;
-                                              height: 16px;
-                                              border-radius: 3px;
-                                              overflow: hidden;
-                                            ">
-                                                                                    <div class="text-center h-100" style="
-                                                background-color: rgb(
-                                                  57,
-                                                  179,
-                                                  57
-                                                );
-                                                width: 80%;
-                                              ">
+                                                                                <div class="f-10 d-flex text-white" style="width: 250px;height: 16px;border-radius: 3px;overflow: hidden;">
+                                                                                    <div class="text-center h-100" style="background-color: rgb(  57,  179,  57);width: 80%;">
                                                                                         80%
                                                                                     </div>
-                                                                                    <div class="text-center h-100" style="
-                                                background-color: rgb(
-                                                  255 88 88
-                                                );
-                                                width: 20%;
-                                              ">
+                                                                                    <div class="text-center h-100" style="background-color: rgb(  255 88 88);width: 20%;">
                                                                                         20%
                                                                                     </div>
                                                                                 </div>
@@ -1367,325 +530,6 @@
 
                                                                                       </div>
                                                                                     </span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li class="mb-2">
-                                                                        <span>الاختبار الأول</span>
-                                                                        <div>
-                                                                            <div
-                                                                                class="d-flex align-items-center justify-content-between"
-                                                                            >
-                                                                                <div
-                                                                                    class="f-10 d-flex text-white"
-                                                                                    style="
-                                              width: 250px;
-                                              height: 16px;
-                                              border-radius: 3px;
-                                              overflow: hidden;
-                                            "
-                                                                                >
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  57,
-                                                  179,
-                                                  57
-                                                );
-                                                width: 80%;
-                                              "
-                                                                                    >
-                                                                                        80%
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  255 88 88
-                                                );
-                                                width: 20%;
-                                              "
-                                                                                    >
-                                                                                        20%
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="d-flex">
-                                                                                    <!-- <span class="fw-bold py-2 me-2" style="color: rgb(12 185 0);">
-                                                                                    أجاب عليه 50  طالب
-                                                                                  </span> -->
-
-                                                                                    <button
-                                                                                        type="button"
-                                                                                        class="reset-btn"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#exampleModal"
-                                                                                        style="color: rgb(12 185 0);"
-                                                                                    >
-                                                                                        أجاب عنه 50 طالب
-                                                                                    </button>
-
-
-
-                                                                                    <span>
-                                              <div class="dropdown">
-                                                <button
-                                                    class="px-0 btn dropdown-toggle"
-                                                    type="button"
-                                                    id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
-                                                >
-                                                  <i
-                                                      class="fas fa-ellipsis-v text-dark"
-                                                  ></i>
-                                                </button>
-                                                <ul
-                                                    class="dd-ff dropdown-menu"
-                                                    aria-labelledby="dropdownMenuButton1"
-                                                >
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                    >تعديل</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50"
-                                                    >حذف</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa50-han"
-                                                    >الموافقة على نشر الاختبار</a
-                                                    >
-                                                  </li>
-                                                </ul>
-
-                                              </div>
-                                            </span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li class="mb-2">
-                                                                        <span>الاختبار الأول</span>
-                                                                        <div>
-                                                                            <div
-                                                                                class="d-flex align-items-center justify-content-between"
-                                                                            >
-                                                                                <div
-                                                                                    class="f-10 d-flex text-white"
-                                                                                    style="
-                                              width: 250px;
-                                              height: 16px;
-                                              border-radius: 3px;
-                                              overflow: hidden;
-                                            "
-                                                                                >
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  57,
-                                                  179,
-                                                  57
-                                                );
-                                                width: 80%;
-                                              "
-                                                                                    >
-                                                                                        80%
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  255 88 88
-                                                );
-                                                width: 20%;
-                                              "
-                                                                                    >
-                                                                                        20%
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="d-flex">
-                                                                                    <!-- <span class="fw-bold py-2 me-2" style="color: rgb(12 185 0);">
-                                                                                    أجاب عليه 50  طالب
-                                                                                  </span> -->
-
-                                                                                    <button
-                                                                                        type="button"
-                                                                                        class="reset-btn"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#exampleModal"
-                                                                                        style="color: rgb(12 185 0);"
-                                                                                    >
-                                                                                        أجاب عنه 50 طالب
-                                                                                    </button>
-
-
-
-                                                                                    <span>
-                                              <div class="dropdown">
-                                                <button
-                                                    class="px-0 btn dropdown-toggle"
-                                                    type="button"
-                                                    id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
-                                                >
-                                                  <i
-                                                      class="fas fa-ellipsis-v text-dark"
-                                                  ></i>
-                                                </button>
-                                                <ul
-                                                    class="dd-ff dropdown-menu"
-                                                    aria-labelledby="dropdownMenuButton1"
-                                                >
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                    >تعديل</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa510"
-                                                    >حذف</a
-                                                    >
-                                                  </li>
-                                                </ul>
-                                                <div
-                                                    class="modal fade"
-                                                    id="exampleModa510"
-                                                    tabindex="-1"
-                                                    aria-labelledby="exampleModalLabel"
-                                                    aria-hidden="true"
-                                                >
-
-                                                </div>
-                                              </div>
-                                            </span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li class="mb-2">
-                                                                        <span>الاختبار الأول</span>
-                                                                        <div>
-                                                                            <div
-                                                                                class="d-flex align-items-center justify-content-between"
-                                                                            >
-                                                                                <div
-                                                                                    class="f-10 d-flex text-white"
-                                                                                    style="
-                                              width: 250px;
-                                              height: 16px;
-                                              border-radius: 3px;
-                                              overflow: hidden;
-                                            "
-                                                                                >
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  57,
-                                                  179,
-                                                  57
-                                                );
-                                                width: 80%;
-                                              "
-                                                                                    >
-                                                                                        80%
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="text-center h-100"
-                                                                                        style="
-                                                background-color: rgb(
-                                                  255 88 88
-                                                );
-                                                width: 20%;
-                                              "
-                                                                                    >
-                                                                                        20%
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="d-flex">
-                                                                                    <!-- <span class="fw-bold py-2 me-2" style="color: rgb(12 185 0);">
-                                                                                    أجاب عليه 50  طالب
-                                                                                  </span> -->
-
-                                                                                    <button
-                                                                                        type="button"
-                                                                                        class="reset-btn"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#exampleModal"
-                                                                                        style="color: rgb(12 185 0);"
-                                                                                    >
-                                                                                        أجاب عنه 50 طالب
-                                                                                    </button>
-
-
-
-                                                                                    <span>
-                                              <div class="dropdown">
-                                                <button
-                                                    class="px-0 btn dropdown-toggle"
-                                                    type="button"
-                                                    id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
-                                                >
-                                                  <i
-                                                      class="fas fa-ellipsis-v text-dark"
-                                                  ></i>
-                                                </button>
-                                                <ul
-                                                    class="dd-ff dropdown-menu"
-                                                    aria-labelledby="dropdownMenuButton1"
-                                                >
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                    >تعديل</a
-                                                    >
-                                                  </li>
-                                                  <li>
-                                                    <a
-                                                        class="dropdown-item"
-                                                        href="#"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModa511"
-                                                    >حذف</a
-                                                    >
-                                                  </li>
-                                                </ul>
-                                                <div
-                                                    class="modal fade"
-                                                    id="exampleModa511"
-                                                    tabindex="-1"
-                                                    aria-labelledby="exampleModalLabel"
-                                                    aria-hidden="true"
-                                                >
-
-                                                </div>
-                                              </div>
-                                            </span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
