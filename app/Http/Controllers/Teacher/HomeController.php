@@ -9,6 +9,8 @@ class HomeController extends Controller
 {
     public function __invoke(Request $request)
     {
-        return view('teacher.index');
+        $teacher = auth('teacher')->user();
+
+        return view('teacher.index', compact('teacher'));
     }
 }

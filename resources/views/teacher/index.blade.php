@@ -15,83 +15,15 @@
                     <div class="slider-wrapper">
                         <div class="slider">
                             <!-- start card -->
-                            <div class="subject">
-                                <div class="subject__card">
-                                    <figure>
-                                        <img src="{{ asset('assets/images/teach1.jpg') }}" alt="" />
-                                        <p></p>
-                                    </figure>
+                            @foreach($teacher->images as $image)
+                                <div class="subject my-2">
+                                    <div class="subject__card">
+                                        <figure>
+                                            <img src="{{ asset($image->url) }}" style="max-height: 80vh; width: auto" alt="" />
+                                        </figure>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="subject">
-                                <div class="subject__card">
-                                    <figure>
-                                        <img src="{{ asset('assets/images/teach2.jpg') }}" alt="" />
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="subject">
-                                <div class="subject__card">
-                                    <figure>
-                                        <img src="{{ asset('assets/images/teach3.jpg') }}" alt="" />
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="subject">
-                                <div class="subject__card">
-                                    <figure>
-                                        <img src="{{ asset('assets/images/teach4.jpg') }}" alt="" />
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="subject">
-                                <div class="subject__card">
-                                    <figure>
-                                        <img src="{{ asset('assets/images/teach1.jpg') }}" alt="" />
-                                    </figure>
-                                </div>
-                            </div>
-
-                            <div class="subject">
-                                <div class="subject__card">
-                                    <figure>
-                                        <img src="{{ asset('assets/images/teach2.jpg') }}" alt="" />
-                                    </figure>
-                                </div>
-                            </div>
-
-                            <div class="subject">
-                                <div class="subject__card">
-                                    <figure>
-                                        <img src="{{ asset('assets/images/teach3.jpg') }}" alt="" />
-                                    </figure>
-                                </div>
-                            </div>
-
-                            <div class="subject">
-                                <div class="subject__card">
-                                    <figure>
-                                        <img src="{{ asset('assets/images/teach4.jpg') }}" alt="" />
-                                    </figure>
-                                </div>
-                            </div>
-
-                            <div class="subject">
-                                <div class="subject__card">
-                                    <figure>
-                                        <img src="{{ asset('assets/images/teach1.jpg') }}" alt="" />
-                                    </figure>
-                                </div>
-                            </div>
-
-                            <div class="subject">
-                                <div class="subject__card">
-                                    <figure>
-                                        <img src="{{ asset('assets/images/teach2.jpg') }}" alt="" />
-                                    </figure>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="teacher-profile-right border-0 teacher-profile-right2" style="height: auto;background-color: transparent;border: 0 !important;box-shadow: none !important;">
@@ -99,17 +31,19 @@
                             <div class="teacher d-block">
                                 <div>
                                     <div>
-                                        <img style="width: 10rem; border: 1px solid #ddd; height: 10rem; margin-bottom: 10px; border-radius: 50%; margin-left: 0;" src="{{ asset('assets/images/teach2.jpg') }}" alt="">
+                                        <img style="width: 10rem; border: 1px solid #ddd; height: 10rem; margin-bottom: 10px; border-radius: 50%; margin-left: 0;" src="{{ $teacher->image_url }}" alt="">
                                     </div>
                                     <div
                                         class="d-flex justify-content-center align-items-center">
                                         <h5 class="me-2">
-                                            الأستاذ/أحمد محمود
+                                            الأستاذ/{{ $teacher->name }}
                                             <i class="_icon fal fa-heart fas fs-4"></i>
                                         </h5>
                                     </div>
 
-                                    <h6><b>0123456789</b></h6>
+                                    @foreach($teacher->phones as $phone)
+                                        <h6 style="font-weight: bold">{{ $phone->number }}</h6>
+                                    @endforeach
                                     <!-- <p>مدرس مادة الرياضيات باللغة العربية</p> -->
                                 </div>
                             </div>
