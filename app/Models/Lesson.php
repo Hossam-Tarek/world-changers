@@ -14,11 +14,25 @@ class Lesson extends Model
         'name_ar',
         'name_en',
         'name_fr',
-        'order',
     ];
 
     public function exams()
     {
         return $this->morphMany(Exam::class, 'examable');
+    }
+
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class);
+    }
+
+    public function subject()
+    {
+        return $this->belongsTo()->belongsTo(Unit::class);
+    }
+
+    public function year()
+    {
+        return $this->belongsTo(Unit::class);
     }
 }
