@@ -20,9 +20,9 @@ class CreateAnswersTable extends Migration
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
 
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->boolean('correct')->default(false);
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

@@ -30,6 +30,7 @@ Route::middleware('isTeacher')->group(function () {
 
     Route::group(['prefix' => 'exams', 'as' => 'exams.'], function () {
         Route::get('/create', [ExamController::class, 'create'])->name('create');
+        Route::post('/store', [ExamController::class, 'store'])->name('store');
     });
 });
 
