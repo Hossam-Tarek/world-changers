@@ -88,4 +88,14 @@ class Teacher extends Authenticatable
     {
         return !empty($this->attributes['image']) ? asset($this->attributes['image']) : '';
     }
+
+    public function teachingLanguage()
+    {
+        return $this->belongsTo(Language::class);
+    }
+
+    public function exams()
+    {
+        return $this->hasMany(Exam::class);
+    }
 }
