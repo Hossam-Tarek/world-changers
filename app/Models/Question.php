@@ -16,4 +16,9 @@ class Question extends Model
         'image',
         'answer_image',
     ];
+
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
+    }
 }

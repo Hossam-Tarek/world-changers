@@ -28,9 +28,9 @@ class SubjectRequest extends FormRequest
             'year_id' => 'required|exists:years,id',
             'departments' => 'required',
             'departments.*' => 'required|exists:departments,id',
-            'name_ar' => 'required|string|max:255',
-            'name_en' => 'required|string|max:255',
-            'name_fr' => 'required|string|max:255',
+            'name_ar' => 'nullable|string|max:255',
+            'name_en' => 'nullable|string|max:255',
+            'name_fr' => 'nullable|string|max:255',
         ];
     }
 }

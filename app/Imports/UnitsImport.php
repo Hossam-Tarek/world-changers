@@ -25,9 +25,9 @@ class UnitsImport implements ToModel, WithValidation, WithHeadingRow
     {
         return [
             'subject_id' => 'required|exists:subjects,id',
-            'name_ar' => 'required|string|max:255',
-            'name_en' => 'required|string|max:255',
-            'name_fr' => 'required|string|max:255',
+            'name_ar' => 'nullable|max:255',
+            'name_en' => 'nullable|max:255',
+            'name_fr' => 'nullable|max:255',
         ];
     }
 }

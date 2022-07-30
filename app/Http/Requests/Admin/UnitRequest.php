@@ -26,9 +26,9 @@ class UnitRequest extends FormRequest
     {
         return [
             'subject_id' => 'required|exists:subjects,id',
-            'name_ar' => 'required|string|max:255',
-            'name_en' => 'required|string|max:255',
-            'name_fr' => 'required|string|max:255',
+            'name_ar' => 'nullable|string|max:255',
+            'name_en' => 'nullable|string|max:255',
+            'name_fr' => 'nullable|string|max:255',
         ];
     }
 }

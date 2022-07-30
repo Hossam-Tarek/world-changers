@@ -20,9 +20,9 @@ class CreateUnitsTable extends Migration
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
 
-            $table->string('name_ar');
-            $table->string('name_en');
-            $table->string('name_fr');
+            $table->string('name_ar')->nullable();
+            $table->string('name_en')->nullable();
+            $table->string('name_fr')->nullable();
             $table->timestamps();
         });
     }

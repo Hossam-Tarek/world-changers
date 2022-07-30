@@ -34,6 +34,10 @@ class CreateExamsTable extends Migration
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
+            $table->foreignId('language_id')
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->string('title');
             $table->tinyInteger('reviewd')->default(0)->nullable();
             $table->tinyInteger('published')->default(0)->nullable();

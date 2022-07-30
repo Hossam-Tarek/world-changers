@@ -1,0 +1,90 @@
+.subscribs {
+    .card-items {
+        .card {
+            border-radius: 1rem;
+            background-color: #ffebee;
+            .nav-tabs {
+                .tab-link {
+                    margin: 1rem 0.5rem;
+                    padding: 0.5rem;
+                    width: 11rem;
+                    text-align: center;
+                    border: 1px solid lightgray;
+                    font-size: 1rem;
+                }
+                .tab-link.not-active {
+                    color: #000;
+                }
+            }
+            .active-body2 {
+                min-height: 150px !important;
+            }
+            .active-body {
+                min-height: 200px;
+                background-color: #fff;
+                width: 90%;
+                margin: 1rem auto;
+                border-radius: 0.5rem;
+
+                .green-head {
+                    color: #95ca9b;
+                    font-size: 1rem;
+                    padding-top: 1rem;
+                    text-align: center;
+                }
+                .blue-head {
+                    color: $primary;
+                    font-size: 1rem;
+                    text-align: center;
+                }
+                .d-flex {
+                    margin: 0 0.3rem;
+                    .code {
+                        font-weight: bold;
+                        font-size: 1rem;
+                        color: #000;
+                        margin: 0 0.5rem;
+                    }
+                    .competion-code-box {
+                        width: 10rem;
+                        height: 3rem;
+                        border: 1px solid #000;
+                        margin: 1rem auto;
+                        padding: 0.5rem 0;
+                        text-align: center;
+                    }
+                    button {
+                        color: #fff;
+                        border-radius: 0.5rem;
+                        height: 2.5rem;
+                        font-size: 1rem;
+                        border: 1px solid $primary;
+                        width: 7rem;
+                        margin: 0 0.5rem;
+                    }
+                }
+                .danger-text {
+                    color: red;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+@include mobile-xs {
+    .green-head,
+    .blue-head,
+    .danger-text,
+    .code {
+        font-size: 0.8rem !important;
+    }
+
+    .tab-link {
+        margin: 1rem auto !important;
+    }
+}
+@include mobile-sm {
+    .tab-link {
+        margin: 1rem !important;
+    }
+}

@@ -47,7 +47,7 @@
     @if(isset($styles) && $styles->isNotEmpty()) {{ $styles }} @endif
 </head>
 
-<body>
+<body class="questions-page">
 <!-- start navbar -->
 <x-teacher.includes.header/>
 <!-- end navbar -->
