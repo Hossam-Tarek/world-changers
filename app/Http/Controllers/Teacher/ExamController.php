@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Teacher;
 use App\Http\Controllers\Controller;
 use App\Models\Answer;
 use App\Models\Exam;
+use App\Models\Language;
+use App\Models\Lesson;
 use App\Models\MainQuestion;
 use App\Models\Question;
 use App\Traits\FileTrait;
@@ -22,18 +24,18 @@ class ExamController extends Controller
         $request->validate([
             'language_id' => 'required',
             'subject_id' => 'required',
-            'subject_id' => 'required',
-            'lesson_id' => 'required',
+            'unit_id' => 'nullable',
+            'lesson_id' => 'nullable',
             'title' => 'nullable|string|max:255',
             'mainQuestions' => 'required',
         ]);
           $exam = new Exam();
-          $exam->title = $request->title;  //todo
-          $exam->lesson_id = $request->lesson_id;  //todo
-          $exam->unit_id = $request->unit_id;  //todo
-          $exam->subject_id = $request->subject_id;  //todo
+          $exam->title = (isset($request->title) ? $request->title : 'اختبار استاذ '.auth('teacher')->user()->name) ;
+          $exam->lesson_id = $request->lesson_id;
+          $exam->unit_id = $request->unit_id;
+          $exam->subject_id = $request->subject_id;
+          $exam->language_id = $request->language_id;
           $exam->teacher_id = auth('teacher')->user()->id;
-
           $exam->save();
         foreach($request->mainQuestions as $mainQuestion){
             $mainQuestionStore =new MainQuestion();
@@ -64,15 +66,15 @@ class ExamController extends Controller
         }
         switch ($request->input('action')) {
             case 'submit':
-                $exam->reviewd = 1;
-                $exam->save();
-                break;
+                toast('تم نشر الامتحان بنجاح والان تحت المراجعة من إدارة الموقع','success');
+                return redirect()->route('home');
 
             case 'preview':
-                $exam->reviewd = 0;
-                $exam->save();
-                break;
+                toast('تم نشر الامتحان بنجاح والان تحت المراجعة من إدارة الموقع','success');
+                $mainId = $exam->mainQuestions[0]->id;
+                $examTime = Question::where('main_question_id', $mainId)->count()*3;
+                $examLanguage = Language::find($request->language_id)->direction;
+                return view('teacher.exams.preview', compact('exam', 'examLanguage','examTime'));
         }
-        return view('teacher.exams.create');
     }
 }

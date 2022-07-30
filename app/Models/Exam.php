@@ -13,4 +13,12 @@ class Exam extends Model
     {
         return $this->morphTo();
     }
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class);
+    }
+    public function mainQuestions()
+    {
+        return $this->hasMany(MainQuestion::class);
+    }
 }

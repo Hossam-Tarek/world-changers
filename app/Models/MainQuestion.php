@@ -15,4 +15,9 @@ class MainQuestion extends Model
         'body',
         'image',
     ];
+
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
 }

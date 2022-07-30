@@ -1,0 +1,40 @@
+.student-message {
+    .student-message-text {
+        p {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #000;
+            font-weight: bold;
+        }
+        .pink-text {
+            color: #ff69b4;
+        }
+        .blue-text {
+            color: #03a9f4;
+        }
+    }
+}
+@include mobile-xs {
+    .student-message {
+        .student-message-text {
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+@include tablet {
+    .student-message {
+        .main-header {
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .student-message-text {
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+}
