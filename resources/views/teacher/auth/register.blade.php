@@ -297,7 +297,14 @@
 
                             <select class="form-control multiple" name="subjects[]" multiple="multiple" id="subjects" required>
                                 @foreach($subjects as $subject)
-                                    <option value="{{ $subject->id }}">{{ $subject->year->name.' - '.$subject->name_ar }}</option>
+                                  @if($subject->name_ar)
+                                      {{ $subjectName = $subject->name_ar}}
+                                  @elseif($subject->name_en)
+                                      {{ $subjectName = $subject->name_en}}
+                                  @else
+                                      {{ $subjectName = $subject->name_fr}}
+                                  @endif
+                                    <option value="{{ $subject->id }}">{{ $subject->year->name.' - '.$subjectName }}</option>
                                 @endforeach
                             </select>
                             <div class="invalid-feedback  mt-1">هذا الحقل مطلوب </div>

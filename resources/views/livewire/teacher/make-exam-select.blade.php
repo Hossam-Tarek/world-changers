@@ -19,7 +19,14 @@
             <select wire:model="subjectId" name="subject_id" id="subject_id" class="form-control">
                 <option value="">اختر المادة الدراسية</option>
                 @foreach($subjects as $subject)
-                    <option value="{{ $subject->id }}">{{ $subject->year->name.' - '.$subject->name_ar }}</option>
+                @if($subject->name_ar)
+                    {{ $subjectName = $subject->name_ar}}
+                @elseif($subject->name_en)
+                    {{ $subjectName = $subject->name_en}}
+                @else
+                    {{ $subjectName = $subject->name_fr}}
+                @endif
+                    <option value="{{ $subject->id }}">{{ $subject->year->name.' - '.$subjectName }}</option>
                 @endforeach
             </select>
         </div>
@@ -33,7 +40,7 @@
             <select wire:model="unitId" name="unit_id" id="unit" style="height: 38px;" class="form-control  p-0">
                 <option value="">اختر الوحدة</option>
                 @foreach($units as $unit)
-                    <option value="{{ $unit->id }}">{{ $unit->getAttribute('name_'.$languageCode, 'name_en') ?? $unit->name_en ?? $unit->name_ar }}</option>
+                    <option value="{{ $unit->id }}">{{ $unit->getAttribute('name_'.$languageCode, 'name_en') ?? $unit->name_en ?? $unit->name_ar ?? $unit->name_fr }}</option>
                 @endforeach
             </select>
         </div>
@@ -47,7 +54,7 @@
             <select wire:model="lessonId" name="lesson_id" id="lesson" style="height: 38px;" class="form-control  p-0">
                 <option value="">اختر الدرس</option>
                 @foreach($lessons as $lesson)
-                    <option value="{{ $lesson->id }}">{{ $lesson->getAttribute('name_'.$languageCode, 'name_en') ?? $lesson->name_en ?? $lesson->name_ar }}</option>
+                    <option value="{{ $lesson->id }}">{{ $lesson->getAttribute('name_'.$languageCode, 'name_en') ?? $lesson->name_en ?? $lesson->name_ar ?? $lesson->name_fr }}</option>
                 @endforeach
             </select>
         </div>
@@ -56,7 +63,6 @@
         <div class="question__field">
             <label class="mb-2" for="title">
                 عنوان الأمتحان
-                <span class="red">*</span>
             </label>
             <input type="text" name="title" class="form-control" id="title" placeholder="أكتب عنوان الأمتحان"/>
             @error('title')

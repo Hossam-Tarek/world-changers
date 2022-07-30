@@ -23,9 +23,9 @@ class LessonsImport implements ToModel, WithValidation, WithHeadingRow
     {
         return [
             'unit_id' => 'required|exists:units,id',
-            'name_ar' => 'required|string|max:255',
-            'name_en' => 'required|string|max:255',
-            'name_fr' => 'required|string|max:255',
+            'name_ar' => 'nullable|max:255',
+            'name_en' => 'nullable|max:255',
+            'name_fr' => 'nullable|max:255',
         ];
     }
 }
